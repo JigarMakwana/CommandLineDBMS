@@ -1,0 +1,10 @@
+/target/
+.idea/
+Hockey.iml
+.idea/sonarlint/issuestore/d/
+.classpath
+.project
+.settings/
+.vscode/
+venv/
+__pycache__/

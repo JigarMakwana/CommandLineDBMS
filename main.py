@@ -1,17 +1,35 @@
-from queryParser.queryParser import parseQuery
-from queryExecutor.queryExecutor import executeQuery
+#author: Jigar Makwana B00842568
+import sys
+from userManagement.user_class import User
+from userManagement.functions import display_options
+from dbmsMain import DBMSMain
 
-is_logged_in = True
-isin_session = True
+User.loadDatabase()
+# user_class.User.generateKey() Needs to be run only once
+
+isLoggedIn = False
 
 if __name__ == '__main__':
-    while isin_session:
-        username = input("Enter username: ")
-        password = input("Enter password: ")
-        print("Signing in...")
-        # invoke sign in method
-        # is_logged_in = sign_in(username, password)
-        if is_logged_in:
-            dbname = input("Enter database: ")
-            executeQuery(dbname + "/")
-            isin_session = False
+    while( True ):
+        userInput = display_options()
+        if(userInput == "1"):
+            username = input("Please enter a Username: ") 
+            password = input("Please enter a Password: ")
+            isLoggedIn = User.signIn(username, password)
+            if(isLoggedIn):
+                print("\nSuccessfully Signed into CSCI5408 DBMS")
+                DBMSMain.DBMSMainMenu()
+            else:
+                print("\nPlease try again..")
+        elif(userInput == "2"):
+            username = input("Please enter a Username: ") 
+            password = input("Please enter a Password: ")
+            User.addUser(username, password)
+        elif(userInput == "3"):
+            User.displayUsers()
+        elif(userInput == "5"):   
+            print("Quitting CSCI5408 DBMS....")
+            sys.exit(0)
+        else:
+            print("Please enter a valid option...")
+        print("\n")
