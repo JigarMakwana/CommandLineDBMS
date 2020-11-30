@@ -1,4 +1,4 @@
-import re
+import re;
 
 qType = ""
 qTableName = []
@@ -7,15 +7,15 @@ qFields = []
 qUpdates = []
 qWhereFields = []
 qWhereValues = []
+qDatabaseName = []
 
-reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "insert", "values", "update", "delete",
-                "where", "from", "set"]
+reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "insert", "values", "update", "delete", "where", "from", "set"]
 tableNames = ["employee", "department"]
 listQuery = []
 returnValue = ""
 
-
 def parseQuery(query):
+    resetResult()
     oldQuery = query.strip().split(" ")
 
     for val in oldQuery:
@@ -28,11 +28,17 @@ def parseQuery(query):
             if checkSelectStep():
                 returnValue = True
         elif qType == "insert":
-            checkInsertStep()
+            if checkInsertStep():
+                returnValue = True
         elif qType == "update":
-            checkUpdateStep()
+            if checkUpdateStep():
+                returnValue = True
         elif qType == "delete":
-            checkDeleteStep()
+            if checkDeleteStep():
+                returnValue = True
+        elif qType == "create":
+            if checkCreateStep():
+                returnValue = True
     else:
         print("Invalid query")
         returnValue = False
@@ -40,6 +46,7 @@ def parseQuery(query):
     if returnValue == True:
         parsedData = {
             "Type": qType,
+            "Database": qDatabaseName,
             "Table": qTableName,
             "InsertFields": qInserts,
             "UpdateFields": qUpdates,
@@ -48,6 +55,7 @@ def parseQuery(query):
             "WhereValues": qWhereValues,
             "Error": ""
         }
+        print(parsedData)
         return parsedData
     else:
         parsedData = {
@@ -55,6 +63,23 @@ def parseQuery(query):
         }
         return parsedData
 
+def resetResult():
+    qType = ""
+    qTableName = []
+    qInserts = []
+    qFields = []
+    qUpdates = []
+    qWhereFields = []
+    qWhereValues = []
+    qDatabaseName = []
+
+def checkCreateStep():
+    fromVal = listQuery.pop(0)
+    if fromVal == "table":
+        qTableName.append(fromVal)
+    elif fromVal == "database":
+        qDatabaseName.append(fromVal)
+    return True
 
 def checkDeleteStep():
     fromVal = listQuery.pop(0)
@@ -119,7 +144,7 @@ def checkDeleteStep():
                         return False
                 elif len(whereValue) > 0:
                     print("Invalid query")
-                    return False
+                    return  False
                 else:
                     print("Successfully parsed query")
                     return True
@@ -133,13 +158,12 @@ def checkDeleteStep():
         print("Invalid query: Expected keyword FROM and table name")
         return False
 
-
 def checkUpdateStep():
     tableVal = listQuery.pop(0)
     if checkIfTable(tableVal):
         setVal = listQuery.pop(0)
         if setVal == "set":
-            flag = 0
+            flag =0
             error = 0
             lastValue = ""
             list3 = []
@@ -256,7 +280,6 @@ def checkUpdateStep():
         print("Invalid query: Expected table name")
         return False
 
-
 def checkInsertStep():
     intoVal = listQuery.pop(0)
     if intoVal == "into":
@@ -264,7 +287,7 @@ def checkInsertStep():
         if checkIfTable(tableVal):
             openRoundB = listQuery.pop(0)
             if openRoundB == "(":
-                flag = 1
+                flag =1
                 error = 0
                 lastValue = ""
                 list3 = []
@@ -367,7 +390,6 @@ def checkInsertStep():
         print("Invalid insert query: Expected keyword INTO")
         return False
 
-
 def checkSelectStep():
     x = listQuery.pop(0)
 
@@ -458,7 +480,6 @@ def checkSelectStep():
         print("Successfully parsed query")
         return True
 
-
 def checkIfIdentifier(identifier):
     pattern = r'^[a-zA-Z_]\w*$'
     if (re.search(pattern, identifier)):
@@ -472,13 +493,11 @@ def checkIfIdentifier(identifier):
     else:
         return False
 
-
 def checkIfcomma(comma):
     if comma == ",":
         return True
     else:
         return False
-
 
 def checkIfEqualOperator(equal):
     if equal == "=":
@@ -486,20 +505,17 @@ def checkIfEqualOperator(equal):
     else:
         return False
 
-
 def checkIfAsterik(asterik):
     if asterik == "*":
         return True
     else:
         return False
 
-
 def checkIfFrom(fromVal):
     if fromVal == "from":
         return True
     else:
         return False
-
 
 def checkIfTable(tableVal):
     for tableName in tableNames:
@@ -508,6 +524,17 @@ def checkIfTable(tableVal):
             return True
     return False
 
+def checkIfCreateTable(fromVal):
+    if fromVal == "table":
+        return True
+    else:
+        return False
+
+def checkIfCreateDatabase(fromVal):
+    if fromVal == "database":
+        return True
+    else:
+        return False
 
 def checkIfStringOrNumber(value):
     regnumber = re.compile(r'\d+(?:,\d*)?')
@@ -515,3 +542,5 @@ def checkIfStringOrNumber(value):
         return True
     else:
         return False
+
+parseQuery('create table table1')
