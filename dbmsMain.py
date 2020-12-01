@@ -3,14 +3,15 @@ from queryParser.queryParser import parseQuery
 from queryExecutor.queryExecutor import executeQuery
 from userManagement import functions
 from userManagement import user_class
+from execution import Execution
 
 class DBMSMain:
-    def DBMSMainMenu():
+    def DBMSMainMenu(username):
         while( True ):
+            print('User in session: ' + username)
             userInput = functions.display_DBMS_options()
             if(userInput == "1"):
-                dbname = input("Enter database: ")
-                executeQuery(dbname + "/")
+                Execution.ExecutionMenu(username)
             elif(userInput == "2"):
                 break
             elif(userInput == "3"):

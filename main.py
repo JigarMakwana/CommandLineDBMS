@@ -7,10 +7,12 @@ from dbmsMain import DBMSMain
 User.loadDatabase()
 # user_class.User.generateKey() Needs to be run only once
 
-isLoggedIn = False
+global isLoggedIn
+global username
 
 if __name__ == '__main__':
     while( True ):
+        isLoggedIn = False
         userInput = display_options()
         if(userInput == "1"):
             username = input("Please enter a Username: ") 
@@ -18,7 +20,7 @@ if __name__ == '__main__':
             isLoggedIn = User.signIn(username, password)
             if(isLoggedIn):
                 print("\nSuccessfully Signed into CSCI5408 DBMS")
-                DBMSMain.DBMSMainMenu()
+                DBMSMain.DBMSMainMenu(username)
             else:
                 print("\nPlease try again..")
         elif(userInput == "2"):

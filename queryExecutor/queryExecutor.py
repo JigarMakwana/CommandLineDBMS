@@ -21,8 +21,10 @@ def executeQuery(dbname):
                 # query: execution
                 with open(db + parser['Table'][0].lower()) as table:
                     print(table.read())
+                    return True
             except:
                 print("Operation failed, try again..")
 
     else:
+        return False
         print("Invalid database name")

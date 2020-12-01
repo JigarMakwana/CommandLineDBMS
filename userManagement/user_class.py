@@ -45,7 +45,9 @@ class User:
     def loadUsers():
         myFile = open(User.database, 'r')        
         with myFile:
-            data = list(csv.reader(myFile))
+            reader = csv.reader(myFile)
+            next(reader, None)
+            data = list(reader)
             for entry in data:
                 newuser = User(entry[0], entry[1], entry[2])
 
