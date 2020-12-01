@@ -9,10 +9,12 @@ qWhereFields = []
 qWhereValues = []
 qDatabaseName = []
 
-reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "insert", "values", "update", "delete", "where", "from", "set"]
-tableNames = ["employee", "department"]
+reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "insert", "values", "update", "delete",
+                "where", "from", "set"]
+tableNames = []
 listQuery = []
 returnValue = ""
+
 
 def parseQuery(query):
     resetResult()
@@ -63,7 +65,9 @@ def parseQuery(query):
         }
         return parsedData
 
+
 def resetResult():
+    global qType, qTableName, qInserts, qFields, qUpdates, qWhereFields, qWhereValues, qDatabaseName
     qType = ""
     qTableName = []
     qInserts = []
@@ -73,6 +77,7 @@ def resetResult():
     qWhereValues = []
     qDatabaseName = []
 
+
 def checkCreateStep():
     fromVal = listQuery.pop(0)
     if fromVal == "table":
@@ -80,6 +85,7 @@ def checkCreateStep():
     elif fromVal == "database":
         qDatabaseName.append(fromVal)
     return True
+
 
 def checkDeleteStep():
     fromVal = listQuery.pop(0)
@@ -144,7 +150,7 @@ def checkDeleteStep():
                         return False
                 elif len(whereValue) > 0:
                     print("Invalid query")
-                    return  False
+                    return False
                 else:
                     print("Successfully parsed query")
                     return True
@@ -158,12 +164,13 @@ def checkDeleteStep():
         print("Invalid query: Expected keyword FROM and table name")
         return False
 
+
 def checkUpdateStep():
     tableVal = listQuery.pop(0)
     if checkIfTable(tableVal):
         setVal = listQuery.pop(0)
         if setVal == "set":
-            flag =0
+            flag = 0
             error = 0
             lastValue = ""
             list3 = []
@@ -280,6 +287,7 @@ def checkUpdateStep():
         print("Invalid query: Expected table name")
         return False
 
+
 def checkInsertStep():
     intoVal = listQuery.pop(0)
     if intoVal == "into":
@@ -287,7 +295,7 @@ def checkInsertStep():
         if checkIfTable(tableVal):
             openRoundB = listQuery.pop(0)
             if openRoundB == "(":
-                flag =1
+                flag = 1
                 error = 0
                 lastValue = ""
                 list3 = []
@@ -390,6 +398,7 @@ def checkInsertStep():
         print("Invalid insert query: Expected keyword INTO")
         return False
 
+
 def checkSelectStep():
     x = listQuery.pop(0)
 
@@ -480,6 +489,7 @@ def checkSelectStep():
         print("Successfully parsed query")
         return True
 
+
 def checkIfIdentifier(identifier):
     pattern = r'^[a-zA-Z_]\w*$'
     if (re.search(pattern, identifier)):
@@ -493,11 +503,13 @@ def checkIfIdentifier(identifier):
     else:
         return False
 
+
 def checkIfcomma(comma):
     if comma == ",":
         return True
     else:
         return False
+
 
 def checkIfEqualOperator(equal):
     if equal == "=":
@@ -505,17 +517,20 @@ def checkIfEqualOperator(equal):
     else:
         return False
 
+
 def checkIfAsterik(asterik):
     if asterik == "*":
         return True
     else:
         return False
 
+
 def checkIfFrom(fromVal):
     if fromVal == "from":
         return True
     else:
         return False
+
 
 def checkIfTable(tableVal):
     for tableName in tableNames:
@@ -524,11 +539,13 @@ def checkIfTable(tableVal):
             return True
     return False
 
+
 def checkIfCreateTable(fromVal):
     if fromVal == "table":
         return True
     else:
         return False
+
 
 def checkIfCreateDatabase(fromVal):
     if fromVal == "database":
@@ -536,11 +553,10 @@ def checkIfCreateDatabase(fromVal):
     else:
         return False
 
+
 def checkIfStringOrNumber(value):
     regnumber = re.compile(r'\d+(?:,\d*)?')
     if regnumber.match(value):
         return True
     else:
         return False
-
-parseQuery('create table table1')
