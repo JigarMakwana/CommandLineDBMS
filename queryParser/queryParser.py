@@ -1,4 +1,5 @@
 import re;
+import os;
 
 qType = ""
 qTableName = []
@@ -8,44 +9,44 @@ qUpdates = []
 qWhereFields = []
 qWhereValues = []
 qDatabaseName = []
+colList = []
 
-reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "insert", "values", "update", "delete",
-                "where", "from", "set"]
-tableNames = []
+reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "insert", "values", "update", "delete", "where", "from", "set"]
+tableNames = ["employee", "department"]
 listQuery = []
 returnValue = ""
 
+def parseQuery(query, DB_Name, UserName):
 
-def parseQuery(query):
     resetResult()
     oldQuery = query.strip().split(" ")
 
     for val in oldQuery:
         listQuery.append(val.lower())
 
-    returnValue = False
+    returnValue = "False"
     qType = listQuery.pop(0)
     if len(listQuery) > 0:
         if qType == "select":
             if checkSelectStep():
-                returnValue = True
+                returnValue = "True"
         elif qType == "insert":
-            if checkInsertStep():
-                returnValue = True
+            if checkInsertStep(query,DB_Name):
+                returnValue = "True"
         elif qType == "update":
             if checkUpdateStep():
-                returnValue = True
+                returnValue = "True"
         elif qType == "delete":
             if checkDeleteStep():
-                returnValue = True
+                returnValue = "True"
         elif qType == "create":
-            if checkCreateStep():
-                returnValue = True
+            if checkCreateStep(query,DB_Name) == "table":
+                returnValue = "CreateTable"
     else:
         print("Invalid query")
-        returnValue = False
+        returnValue = "False"
 
-    if returnValue == True:
+    if returnValue == "True":
         parsedData = {
             "Type": qType,
             "Database": qDatabaseName,
@@ -59,15 +60,21 @@ def parseQuery(query):
         }
         print(parsedData)
         return parsedData
+    elif returnValue == "CreateTable":
+        parsedData = {
+            "Database": DB_Name,
+            "UserName": UserName,
+            "Table": qTableName.pop(0),
+            "Columns":[colList]
+        }
     else:
         parsedData = {
             "Error": "Invalid query"
         }
-        return parsedData
 
+    return parsedData
 
 def resetResult():
-    global qType, qTableName, qInserts, qFields, qUpdates, qWhereFields, qWhereValues, qDatabaseName
     qType = ""
     qTableName = []
     qInserts = []
@@ -75,17 +82,101 @@ def resetResult():
     qUpdates = []
     qWhereFields = []
     qWhereValues = []
-    qDatabaseName = []
+    colList = []
 
-
-def checkCreateStep():
+def checkCreateStep(query,DB_Name):
     fromVal = listQuery.pop(0)
-    if fromVal == "table":
-        qTableName.append(fromVal)
-    elif fromVal == "database":
-        qDatabaseName.append(fromVal)
-    return True
 
+    dirname = os.path.dirname
+    path = os.path.join(dirname(dirname(__file__)))
+
+    if fromVal == "table":
+        tableName = listQuery.pop(0)
+        qTableName.append(tableName)
+        directoryPath = path + "/database/" + DB_Name
+
+        fullPath = directoryPath + "/data"
+        with open(fullPath, "a") as file1:
+            toFile = query + "\n"
+            file1.write(toFile)
+
+        createColumnList(query)
+
+    elif fromVal == "database":
+        databaseName = listQuery.pop(0)
+        os.mkdir(path + "/database/" + databaseName)
+        directoryPath = path + "/database/" + DB_Name
+
+        fullPath = directoryPath + "/data"
+        with open(fullPath, "x") as file1:
+            toFile = "\n"
+            file1.write(toFile)
+    return fromVal
+
+def createColumnList(query):
+    queryWithoutCreate = query.lower().replace("create table " + qTableName[-1] + " ( ", "")
+    listColQuery = queryWithoutCreate.strip().split(",")
+    for val in listColQuery:
+        columnData = val.strip().split(" ")
+        columnName = columnData.pop(0)
+        datatype = columnData.pop(0)
+        isNot = columnData.pop(0)
+        isNotNullVal = False
+        isUnique = False
+        isAutoIncrement = False
+        isPrimaryKey = False
+        isForeignKey = False
+        references = ""
+        default = ""
+
+        if isNot.lower() == "not":
+            isnull = columnData.pop(0)
+            isNotNullVal = True
+
+            isUniqueVal = columnData.pop(0)
+            if isUniqueVal.lower() == "unique":
+                isUnique = True
+
+                isAutoIncrementVal = columnData.pop(0)
+                if isAutoIncrementVal.lower() == "auto_increment":
+                    isAutoIncrement = True
+
+                    isPrimaryKeyVal = columnData.pop(0)
+                    if isPrimaryKeyVal.lower() == "primary":
+                        isPrimaryKeyVal = columnData.pop(0)
+                        isPrimaryKey = True
+                    elif isPrimaryKeyVal.lower() == "foreign":
+                        isPrimaryKeyVal = columnData.pop(0)
+                        isForeignKey = True
+                        refrencesVal = columnData.pop(0)
+                        references = columnData.pop(0)
+
+                    if len(columnData)>0:
+                        defaultVal = columnData.pop(0)
+                        if defaultVal.lower() == "default":
+                            default = columnData.pop(0)
+
+            if isUniqueVal.lower() == "default":
+                default = columnData.pop(0)
+
+        elif isNot.lower() == "unique":
+            isUnique = True
+
+            defaultVal = columnData.pop(0)
+            if defaultVal.lower() == "default":
+                default = columnData.pop(0)
+
+        elif isNot.lower() == "foreign":
+            isForeignKey = True
+            isForeignKeyVal = columnData.pop(0)
+            referencesVal = columnData.pop(0)
+            references = columnData.pop(0)
+
+        column = {"Name": columnName, "DataType": datatype, "isNotNull": isNotNullVal, "isUnique": isUnique,
+                  "isAutoIncrement": isAutoIncrement, "isPrimaryKey": isPrimaryKey, "isForeignKey": isForeignKey,
+                  "references": references, "default":default}
+        colList.append(column)
+    print(colList)
 
 def checkDeleteStep():
     fromVal = listQuery.pop(0)
@@ -150,7 +241,7 @@ def checkDeleteStep():
                         return False
                 elif len(whereValue) > 0:
                     print("Invalid query")
-                    return False
+                    return  False
                 else:
                     print("Successfully parsed query")
                     return True
@@ -164,13 +255,12 @@ def checkDeleteStep():
         print("Invalid query: Expected keyword FROM and table name")
         return False
 
-
 def checkUpdateStep():
     tableVal = listQuery.pop(0)
     if checkIfTable(tableVal):
         setVal = listQuery.pop(0)
         if setVal == "set":
-            flag = 0
+            flag =0
             error = 0
             lastValue = ""
             list3 = []
@@ -287,15 +377,24 @@ def checkUpdateStep():
         print("Invalid query: Expected table name")
         return False
 
+def checkInsertStep(query,DB_Name):
+    dirname = os.path.dirname
+    path = os.path.join(dirname(dirname(__file__)))
 
-def checkInsertStep():
+    directoryPath = path + "/database/" + DB_Name
+
+    fullPath = directoryPath + "/data"
+    with open(fullPath, "a") as file1:
+        toFile = query + "\n"
+        file1.write(toFile)
+
     intoVal = listQuery.pop(0)
     if intoVal == "into":
         tableVal = listQuery.pop(0)
         if checkIfTable(tableVal):
             openRoundB = listQuery.pop(0)
             if openRoundB == "(":
-                flag = 1
+                flag =1
                 error = 0
                 lastValue = ""
                 list3 = []
@@ -398,7 +497,6 @@ def checkInsertStep():
         print("Invalid insert query: Expected keyword INTO")
         return False
 
-
 def checkSelectStep():
     x = listQuery.pop(0)
 
@@ -489,7 +587,6 @@ def checkSelectStep():
         print("Successfully parsed query")
         return True
 
-
 def checkIfIdentifier(identifier):
     pattern = r'^[a-zA-Z_]\w*$'
     if (re.search(pattern, identifier)):
@@ -503,13 +600,11 @@ def checkIfIdentifier(identifier):
     else:
         return False
 
-
 def checkIfcomma(comma):
     if comma == ",":
         return True
     else:
         return False
-
 
 def checkIfEqualOperator(equal):
     if equal == "=":
@@ -517,13 +612,11 @@ def checkIfEqualOperator(equal):
     else:
         return False
 
-
 def checkIfAsterik(asterik):
     if asterik == "*":
         return True
     else:
         return False
-
 
 def checkIfFrom(fromVal):
     if fromVal == "from":
@@ -531,14 +624,9 @@ def checkIfFrom(fromVal):
     else:
         return False
 
-
 def checkIfTable(tableVal):
-    for tableName in tableNames:
-        if tableName == tableVal:
-            qTableName.append(tableVal)
-            return True
-    return False
-
+    qTableName.append(tableVal)
+    return True
 
 def checkIfCreateTable(fromVal):
     if fromVal == "table":
@@ -546,13 +634,11 @@ def checkIfCreateTable(fromVal):
     else:
         return False
 
-
 def checkIfCreateDatabase(fromVal):
     if fromVal == "database":
         return True
     else:
         return False
-
 
 def checkIfStringOrNumber(value):
     regnumber = re.compile(r'\d+(?:,\d*)?')
@@ -560,3 +646,7 @@ def checkIfStringOrNumber(value):
         return True
     else:
         return False
+
+#parseQuery('create database 903','903','Rajni')
+parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','901','Rajni');
+
