@@ -1,6 +1,4 @@
 #author: Jigar Makwana B00842568
-from queryParser.queryParser import parseQuery
-from queryExecutor.queryExecutor import executeQuery
 from userManagement import functions
 from userManagement import user_class
 from execution import Execution
@@ -22,7 +20,8 @@ class DBMSMain:
             elif(userInput == "5"):
                 break
             elif(userInput == "6"):
-                generateERD()
+                dbname = input("Enter a new Database Name: ")
+                generateERD(dbname)
             elif(userInput == "7"):
                 isLoggedIn = user_class.User.logOut()
                 break
