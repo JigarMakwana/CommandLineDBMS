@@ -7,4 +7,5 @@ Hockey.iml
 .settings/
 .vscode/
 venv/
+/__pycache__/
 __pycache__/
