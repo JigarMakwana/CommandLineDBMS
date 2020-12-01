@@ -4,6 +4,7 @@ from queryExecutor.queryExecutor import executeQuery
 from userManagement import functions
 from userManagement import user_class
 from execution import Execution
+from dbERD.dbERD import generateERD
 
 class DBMSMain:
     def DBMSMainMenu(username):
@@ -21,7 +22,7 @@ class DBMSMain:
             elif(userInput == "5"):
                 break
             elif(userInput == "6"):
-                break
+                generateERD()
             elif(userInput == "7"):
                 isLoggedIn = user_class.User.logOut()
                 break

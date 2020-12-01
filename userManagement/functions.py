@@ -24,7 +24,7 @@ def display_DBMS_options():
 
 def display_CRUD_options():
     userSelction = input("""Please select the option
-        1 - Create Database
+        1 - Create a new Database
         2 - Use Existing Database
         3 - Create Table
         4 - Update Table

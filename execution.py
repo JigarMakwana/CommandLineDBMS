@@ -5,28 +5,36 @@ from userManagement import functions
 from userManagement import user_class
 from os import path, listdir
 import csv
+import json
 
 db_path = "database/"
 dd_path = "dataDictonary/"
-
-
+db_name = ''
 
 class Execution:
+    def set_db_name(dbname):
+        global db_name
+        db_name = dbname
+        
     def ExecutionMenu(username):
         while (True):
             print('User in session: ' + username)
             userInput = functions.display_CRUD_options()
             if (userInput == "1"):
-                dbname = input("Enter Database Name: ")
+                dbname = input("Enter a new Database Name: ")
                 # isDatabaseCreated = executeQuery(dbname + "/")
                 if (True):
                     Execution.createDBUserMap(dbname, username)
             elif (userInput == "2"):
-                dbname = input("Enter Database Name: ")
+                dbname = input("Enter an existing Database Name: ")
+                Execution.set_db_name(dbname)
                 set_db_name(dbname + "/")
             elif (userInput == "3"):
-                # createTableQuery = input("Enter Create Table Query: ")
-                executeQuery()
+                dbname = input("Enter a new Database Name: ")
+                Execution.set_db_name(dbname)
+                createTableQuery = input("Enter Create Table Query: ")
+                Execution.createMetaData(db_name, parseQuery(createTableQuery, db_name, username))
+                # executeQuery()
             elif (userInput == "4"):
                 # updateTableQuery = input("Enter Update Table Query: ")
                 executeQuery()
@@ -53,3 +61,11 @@ class Execution:
             writer = csv.writer(myFile)
             writer.writerows((mapEntry[0], mapEntry[1]))
         print("\ndbUserMap.csv updated!")
+
+    def createMetaData(db_name, parseCreateData):
+        jsonData = json.dumps(parseCreateData)
+        f = open(dd_path + db_name + '.json',"a")
+        f.write(jsonData)
+        f.close()
+        print("\nmetadata file updated!")
+

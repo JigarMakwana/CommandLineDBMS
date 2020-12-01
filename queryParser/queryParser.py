@@ -96,7 +96,8 @@ def checkCreateStep(query,DB_Name):
         directoryPath = path + "/database/" + DB_Name
 
         fullPath = directoryPath + "/data"
-        with open(fullPath, "a") as file1:
+        dumpPath = "sqlDump/" + DB_Name
+        with open(dumpPath, "a") as file1:
             toFile = query + "\n"
             file1.write(toFile)
 
@@ -108,7 +109,8 @@ def checkCreateStep(query,DB_Name):
         directoryPath = path + "/database/" + DB_Name
 
         fullPath = directoryPath + "/data"
-        with open(fullPath, "x") as file1:
+        dumpPath = "sqlDump/" + DB_Name
+        with open(dumpPath, "x") as file1:
             toFile = "\n"
             file1.write(toFile)
     return fromVal
@@ -382,9 +384,9 @@ def checkInsertStep(query,DB_Name):
     path = os.path.join(dirname(dirname(__file__)))
 
     directoryPath = path + "/database/" + DB_Name
-
     fullPath = directoryPath + "/data"
-    with open(fullPath, "a") as file1:
+    dumpPath = "sqlDump/" + DB_Name
+    with open(dumpPath, "a") as file1:
         toFile = query + "\n"
         file1.write(toFile)
 
