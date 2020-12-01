@@ -5,16 +5,21 @@ from userManagement import functions
 from userManagement import user_class
 from os import path, listdir
 import csv
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
+
+
 
 db_path = "database/"
 dd_path = "dataDictonary/"
-
 
 
 class Execution:
     def ExecutionMenu(username):
         while (True):
             print('User in session: ' + username)
+            logging.warning('User in session: ' + username)
             userInput = functions.display_CRUD_options()
             if (userInput == "1"):
                 dbname = input("Enter Database Name: ")

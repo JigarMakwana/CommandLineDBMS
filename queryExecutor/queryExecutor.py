@@ -3,8 +3,8 @@ import logging
 import queryParser.queryParser as qp
 
 db_path = "database/"
-logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs')
 
+logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
 db = ''
 
 
@@ -19,7 +19,7 @@ def executeQuery():
 
         # database: validation
         print("Into the database: ", db)
-        logging.info('User entered valid database: ' + db_main)
+        logging.warning('User entered valid database: ' + db_main)
         qp.tableNames = listdir(db_path + db)
 
         # query: validation and parsing
@@ -53,7 +53,7 @@ def executeQuery():
                         if len(parser['WhereFields']) == 0:
                             for element in rows:
                                 print(element)
-                            logging.info('Select query updated successfully.')
+                            logging.warning('Select query executed successfully.')
                         else:
                             indexes = [table_cols.index(col) for col in parser['WhereFields']]
                             conditions_indexes = [0]
@@ -70,21 +70,39 @@ def executeQuery():
 
                             for element in filtered_rows:
                                 print(element)
-                            logging.info('Select query updated successfully.')
+                            logging.warning('Select query executed successfully.')
 
                 # query: insert
                 elif parser['Type'] == 'insert':
                     with open(db_main + parser['Table'][0].lower(), 'a') as table:
                         row = ','.join(col for col in parser['InsertUpdateData'])
                         table.write(row + "\n")
+                        logging.warning('Insert query executed successfully.')
                         print("Successfully entered")
 
-                # query: insert
+                # query: update
                 elif parser['Type'] == 'update':
-                    with open(db_main + parser['Table'][0].lower(), 'a') as table:
-                        row = ','.join(col for col in parser['InsertUpdateData'])
-                        table.write(row + "\n")
-                        print("Successfully entered")
+                    rows = []
+                    table_data_rows = []
+                    with open(db_main + parser['Table'][0].lower()) as table:
+                        col = parser['WhereFields'][0]
+                        update_col = parser['UpdateFields'][0]
+                        table_data_rows = table.readlines()
+                        rows.append(table_data_rows[0])
+                        header = table_data_rows[0].split(',')
+                        for rows_idx in range(1, len(table_data_rows)):
+                            row = table_data_rows[rows_idx]
+                            row_elements = row.split(',')
+                            if row_elements[header.index(col)] != parser['WhereValues'][0]:
+                                rows.append(row)
+                            else:
+                                row = row.replace(row_elements[header.index(update_col)], parser['InsertUpdateData'][0])
+                                rows.append(row)
+                    with open(db_main + parser['Table'][0].lower(), 'w') as table:
+                        for row in rows:
+                            table.write(row)
+                    logging.warning('Update query executed successfully.')
+                    print("Updated successfully")
 
                 # query: delete
                 elif parser['Type'] == 'delete':
@@ -103,6 +121,7 @@ def executeQuery():
                     with open(db_main + parser['Table'][0].lower(), 'w') as table:
                         for row in rows:
                             table.write(row)
+                    logging.warning('Delete query executed successfully.')
                     print("Deleted Successfully")
 
                 # query: create
@@ -111,8 +130,9 @@ def executeQuery():
                         print(table)
 
             except:
+                logging.error('Query execution failed on database: ' + db)
                 print("Operation failed..")
 
     else:
-        logging.info('User entered invalid database name.')
+        logging.warning('User entered invalid database name.')
         print("Invalid database name")

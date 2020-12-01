@@ -1,0 +1,100 @@
+2020-12-01 12:23:52,290 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:23:52,291 - User in session: test
+2020-12-01 12:23:53,149 - User in session: test
+2020-12-01 12:23:53,429 - User entered valid database: database/
+2020-12-01 12:24:19,510 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:24:19,510 - User in session: test
+2020-12-01 12:24:20,863 - User in session: test
+2020-12-01 12:24:22,483 - User in session: test
+2020-12-01 12:24:24,731 - User entered valid database: database/datadb/
+2020-12-01 12:24:28,141 - Parsing results reset.
+2020-12-01 12:24:28,142 - Successfully parsed query
+2020-12-01 12:24:28,143 - Select query executed successfully.
+2020-12-01 12:25:08,278 - 
+User not found
+2020-12-01 12:25:11,884 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:25:11,884 - User in session: test
+2020-12-01 12:25:13,109 - User in session: test
+2020-12-01 12:25:16,090 - User in session: test
+2020-12-01 12:25:23,857 - User entered valid database: database/datadb/
+2020-12-01 12:26:09,466 - Parsing results reset.
+2020-12-01 12:26:09,467 - Successfully parsed query
+2020-12-01 12:26:09,468 - Update query executed successfully.
+2020-12-01 12:34:00,350 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:34:00,351 - User in session: test
+2020-12-01 12:34:01,731 - User in session: test
+2020-12-01 12:34:03,299 - User in session: test
+2020-12-01 12:34:06,329 - User entered valid database: database/datadb/
+2020-12-01 12:34:46,370 - Parsing results reset.
+2020-12-01 12:34:46,374 - Successfully parsed query
+2020-12-01 12:34:46,375 - Query execution failed on database: datadb/
+2020-12-01 12:35:48,696 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:35:48,696 - User in session: test
+2020-12-01 12:35:50,128 - User in session: test
+2020-12-01 12:35:51,542 - User in session: test
+2020-12-01 12:35:54,263 - User entered valid database: database/datadb/
+2020-12-01 12:36:06,439 - Parsing results reset.
+2020-12-01 12:36:06,443 - Successfully parsed query
+2020-12-01 12:37:09,981 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:37:09,981 - User in session: test
+2020-12-01 12:37:11,385 - User in session: test
+2020-12-01 12:37:12,645 - User in session: test
+2020-12-01 12:37:15,308 - User entered valid database: database/datadb/
+2020-12-01 12:37:28,309 - Parsing results reset.
+2020-12-01 12:37:28,314 - Successfully parsed query
+2020-12-01 12:38:50,766 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:38:50,766 - User in session: test
+2020-12-01 12:38:52,224 - User in session: test
+2020-12-01 12:38:54,167 - User in session: test
+2020-12-01 12:38:56,166 - User entered valid database: database/datadb/
+2020-12-01 12:39:12,017 - Parsing results reset.
+2020-12-01 12:39:12,018 - Successfully parsed query
+2020-12-01 12:39:12,018 - Query execution failed on database: datadb/
+2020-12-01 12:39:27,347 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:39:27,348 - User in session: test
+2020-12-01 12:39:28,906 - User in session: test
+2020-12-01 12:39:30,706 - User in session: test
+2020-12-01 12:39:32,170 - User entered valid database: database/datadb/
+2020-12-01 12:39:44,860 - Parsing results reset.
+2020-12-01 12:39:44,863 - Successfully parsed query
+2020-12-01 12:40:26,275 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:40:26,275 - User in session: test
+2020-12-01 12:40:27,799 - User in session: test
+2020-12-01 12:40:30,596 - User in session: test
+2020-12-01 12:40:32,230 - User entered valid database: database/datadb/
+2020-12-01 12:40:41,937 - Parsing results reset.
+2020-12-01 12:40:41,941 - Successfully parsed query
+2020-12-01 12:44:05,453 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:44:05,453 - User in session: test
+2020-12-01 12:44:06,918 - User in session: test
+2020-12-01 12:44:08,789 - User in session: test
+2020-12-01 12:44:13,628 - User entered valid database: database/datadb/
+2020-12-01 12:44:24,712 - Parsing results reset.
+2020-12-01 12:44:24,713 - Successfully parsed query
+2020-12-01 12:45:16,531 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 12:45:16,532 - User in session: test
+2020-12-01 12:45:17,756 - User in session: test
+2020-12-01 12:45:19,235 - User in session: test
+2020-12-01 12:45:20,784 - User entered valid database: database/datadb/
+2020-12-01 12:45:34,243 - Parsing results reset.
+2020-12-01 12:45:34,246 - Successfully parsed query
+2020-12-01 13:12:44,028 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-01 13:12:44,029 - User in session: test
+2020-12-01 13:13:51,117 - User in session: test
+2020-12-01 13:14:06,919 - User in session: test
+2020-12-01 13:14:15,799 - User entered valid database: database/datadb/
+2020-12-01 13:14:22,591 - Parsing results reset.
+2020-12-01 13:14:22,592 - Successfully parsed query
+2020-12-01 13:14:22,594 - Select query executed successfully.
