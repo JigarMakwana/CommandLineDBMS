@@ -13,14 +13,14 @@ qWhereValues = []
 qDatabaseName = []
 colList = []
 
-reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "insert", "values", "update", "delete",
-                "where", "from", "set"]
-tableNames = []
+reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "insert", "values", "update", "delete", "where", "from", "set"]
+tableNames = ["employee", "department"]
 listQuery = []
 returnValue = ""
 
 
 def parseQuery(query, DB_Name, UserName):
+
     resetResult()
     oldQuery = query.strip().split(" ")
 
@@ -69,7 +69,7 @@ def parseQuery(query, DB_Name, UserName):
             "Database": DB_Name,
             "UserName": UserName,
             "Table": qTableName.pop(0),
-            "Columns": [colList]
+            "Columns":colList
         }
     else:
         parsedData = {
@@ -101,10 +101,11 @@ def checkCreateStep(query, DB_Name):
     if fromVal == "table":
         tableName = listQuery.pop(0)
         qTableName.append(tableName)
-        directoryPath = path + "/database/" + DB_Name
+        directoryPath = path + "/sqlDump/" + DB_Name
 
-        fullPath = directoryPath + "/data"
-        with open(fullPath, "a") as file1:
+        #fullPath = directoryPath + "/data"
+        #dumpPath = "sqlDump/" + DB_Name
+        with open(directoryPath, "a") as file1:
             toFile = query + "\n"
             file1.write(toFile)
 
@@ -112,11 +113,12 @@ def checkCreateStep(query, DB_Name):
 
     elif fromVal == "database":
         databaseName = listQuery.pop(0)
-        os.mkdir(path + "/database/" + databaseName)
-        directoryPath = path + "/database/" + DB_Name
-
-        fullPath = directoryPath + "/data"
-        with open(fullPath, "x") as file1:
+        # os.mkdir(path + "/database/" + databaseName)
+        directoryPath = path + "/sqlDump/" + DB_Name
+        #
+        # fullPath = directoryPath + "/data"
+        #dumpPath = "sqlDump/" + DB_Name
+        with open(directoryPath, "a") as file1:
             toFile = "\n"
             file1.write(toFile)
     return fromVal
@@ -135,7 +137,8 @@ def createColumnList(query):
         isAutoIncrement = False
         isPrimaryKey = False
         isForeignKey = False
-        references = ""
+        referencesTable = ""
+        referencesKey = ""
         default = ""
 
         if isNot.lower() == "not":
@@ -158,7 +161,9 @@ def createColumnList(query):
                         isPrimaryKeyVal = columnData.pop(0)
                         isForeignKey = True
                         refrencesVal = columnData.pop(0)
-                        references = columnData.pop(0)
+                        referencesTable = columnData.pop(0)
+                        removeval = columnData.pop(0)
+                        referencesKey = columnData.pop(0)
 
                     if len(columnData) > 0:
                         defaultVal = columnData.pop(0)
@@ -179,11 +184,13 @@ def createColumnList(query):
             isForeignKey = True
             isForeignKeyVal = columnData.pop(0)
             referencesVal = columnData.pop(0)
-            references = columnData.pop(0)
+            referencesTable = columnData.pop(0)
+            removeval = columnData.pop(0)
+            referencesKey = columnData.pop(0)
 
         column = {"Name": columnName, "DataType": datatype, "isNotNull": isNotNullVal, "isUnique": isUnique,
                   "isAutoIncrement": isAutoIncrement, "isPrimaryKey": isPrimaryKey, "isForeignKey": isForeignKey,
-                  "references": references, "default": default}
+                  "referencesTable": referencesTable, "referencesKey":referencesKey, "default":default}
         colList.append(column)
     print(colList)
 
@@ -414,10 +421,10 @@ def checkInsertStep(query, DB_Name):
     dirname = os.path.dirname
     path = os.path.join(dirname(dirname(__file__)))
 
-    directoryPath = path + "/database/" + DB_Name
-
-    fullPath = directoryPath + "/data"
-    with open(fullPath, "a") as file1:
+    directoryPath = path + "/sqlDump/" + DB_Name
+    #fullPath = directoryPath + "/data"
+    #dumpPath = "sqlDump/" + DB_Name
+    with open(directoryPath, "a") as file1:
         toFile = query + "\n"
         file1.write(toFile)
 

@@ -1,0 +1,1 @@
+CREATE TABLE Orders (OrderName var char(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY, OrderNumber int NOT NULL DEFAULT 'Sandnes', PersonID int FOREIGN KEY REFERENCES Persons(PersonID));

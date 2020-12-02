@@ -1,4 +1,4 @@
-# author: Jigar Makwana B00842568
+#author: Jigar Makwana B00842568
 from queryParser.queryParser import parseQuery
 from queryExecutor.queryExecutor import executeQuery
 from userManagement import functions
@@ -8,28 +8,33 @@ import logging
 
 logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
 
+from dbERD.dbERD import generateERD
+from sqlDump.sqlDump import createDump
 
 class DBMSMain:
     def DBMSMainMenu(username):
-        while (True):
+        while( True ):
             print('User in session: ' + username)
             logging.warning('User in session: ' + username)
             userInput = functions.display_DBMS_options()
-            if (userInput == "1"):
+            if(userInput == "1"):
                 Execution.ExecutionMenu(username)
-            elif (userInput == "2"):
+            elif(userInput == "2"):
                 break
-            elif (userInput == "3"):
+            elif(userInput == "3"):
                 break
-            elif (userInput == "4"):
+            elif(userInput == "4"):
                 break
-            elif (userInput == "5"):
-                break
-            elif (userInput == "6"):
-                break
-            elif (userInput == "7"):
+            elif(userInput == "5"):
+                dbname = input("Enter a new Database Name: ")
+                createDump(dbname)
+            elif(userInput == "6"):
+                dbname = input("Enter a new Database Name: ")
+                generateERD(dbname)
+            elif(userInput == "7"):
                 isLoggedIn = user_class.User.logOut()
                 break
             else:
                 print("Please enter a valid option...")
             print("\n")
+

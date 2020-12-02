@@ -1,0 +1,28 @@
+{
+    "Database": "testdb",
+    "UserName": "test",
+    "Table": "Orders",
+    "Cloumn": [{
+            "Name": "OrderID",
+            "DataType": "varchar(255)",
+            "isUnique": "True",
+            "isNotNull": "True",
+            "isAutoIncrement": "True",
+            "isPrimaryKey": "True",
+            "isForeignKey": "False",
+            "references": "",
+            "default": ""
+        },
+        {
+            "Name": "PersonID",
+            "DataType": "varchar(255)",
+            "isUnique": "False",
+            "isNotNull": "False",
+            "isAutoIncrement": "False",
+            "isPrimaryKey": "False",
+            "isForeignKey": "True",
+            "references": "Persons(PersonID)",
+            "default": "Hello"
+        }
+    ]
+}
