@@ -13,7 +13,6 @@ import json
 db_path = "database/"
 dd_path = "dataDictonary/"
 
-
 dd_path = "dataDictonary/dbDic/"
 db_name = ''
 
