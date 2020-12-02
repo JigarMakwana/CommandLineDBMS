@@ -3,6 +3,7 @@ from userManagement import functions
 from userManagement import user_class
 from execution import Execution
 from dbERD.dbERD import generateERD
+from sqlDump.sqlDump import createDump
 
 class DBMSMain:
     def DBMSMainMenu(username):
@@ -18,7 +19,8 @@ class DBMSMain:
             elif(userInput == "4"):
                 break
             elif(userInput == "5"):
-                break
+                dbname = input("Enter a new Database Name: ")
+                createDump(dbname)
             elif(userInput == "6"):
                 dbname = input("Enter a new Database Name: ")
                 generateERD(dbname)

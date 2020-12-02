@@ -27,10 +27,10 @@ class User:
 
     def saveUserstoDB(id_num, name, password):
         userData = []
-        for i in range(0, len(User.dbUsersList)):
-            encryptedPassword = User.encryptPassword(password)
-            data = [id_num, name, encryptedPassword]
-            userData.append(data)
+        # for i in range(0, len(User.dbUsersList)):
+        encryptedPassword = User.encryptPassword(password)
+        data = [id_num, name, encryptedPassword]
+        userData.append(data)
         myFile = open(User.database, 'a', newline='')
         with myFile:
             writer = csv.writer(myFile)
