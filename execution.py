@@ -1,6 +1,7 @@
 # author: Jigar Makwana B00842568
 from queryParser.queryParser import parseQuery
-from queryExecutor.queryExecutor import executeQuery, set_db_name
+# from queryExecutor.queryExecutor import executeQuery, set_db_name
+from queryExecutor.transactionMngr import executeQuery, set_db_name
 from userManagement import functions
 from userManagement import user_class
 from os import path, listdir
@@ -34,7 +35,7 @@ class Execution:
                 Execution.set_db_name(dbname)
                 createTableQuery = input("Enter Create Table Query: ")
                 Execution.createMetaData(db_name, parseQuery(createTableQuery, db_name, username))
-                # executeQuery()
+                executeQuery()
             elif (userInput == "4"):
                 # updateTableQuery = input("Enter Update Table Query: ")
                 executeQuery()

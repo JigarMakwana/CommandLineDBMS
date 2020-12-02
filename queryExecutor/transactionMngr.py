@@ -79,7 +79,7 @@ def executeQuery():
                         table.write(row + "\n")
                         print("Successfully entered")
 
-                # query: update
+                # query: insert
                 elif parser['Type'] == 'update':
                     with open(db_main + parser['Table'][0].lower(), 'a') as table:
                         row = ','.join(col for col in parser['InsertUpdateData'])
