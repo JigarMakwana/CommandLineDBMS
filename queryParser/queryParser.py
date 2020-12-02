@@ -128,7 +128,8 @@ def createColumnList(query):
         isAutoIncrement = False
         isPrimaryKey = False
         isForeignKey = False
-        references = ""
+        referencesTable = ""
+        referencesKey = ""
         default = ""
 
         if isNot.lower() == "not":
@@ -151,7 +152,9 @@ def createColumnList(query):
                         isPrimaryKeyVal = columnData.pop(0)
                         isForeignKey = True
                         refrencesVal = columnData.pop(0)
-                        references = columnData.pop(0)
+                        referencesTable = columnData.pop(0)
+                        removeval = columnData.pop(0)
+                        referencesKey = columnData.pop(0)
 
                     if len(columnData)>0:
                         defaultVal = columnData.pop(0)
@@ -172,11 +175,13 @@ def createColumnList(query):
             isForeignKey = True
             isForeignKeyVal = columnData.pop(0)
             referencesVal = columnData.pop(0)
-            references = columnData.pop(0)
+            referencesTable = columnData.pop(0)
+            removeval = columnData.pop(0)
+            referencesKey = columnData.pop(0)
 
         column = {"Name": columnName, "DataType": datatype, "isNotNull": isNotNullVal, "isUnique": isUnique,
                   "isAutoIncrement": isAutoIncrement, "isPrimaryKey": isPrimaryKey, "isForeignKey": isForeignKey,
-                  "references": references, "default":default}
+                  "referencesTable": referencesTable, "referencesKey":referencesKey, "default":default}
         colList.append(column)
     print(colList)
 
@@ -650,6 +655,7 @@ def checkIfStringOrNumber(value):
         return False
 
 #parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons(PersonID));','904','Rajni')
+#parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );','904','Rajni')
 #parseQuery('create table 904','904','Rajni')
 #parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','904','Rajni');
 
