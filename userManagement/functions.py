@@ -30,8 +30,9 @@ def display_CRUD_options():
         4 - Update Table
         5 - Read Table
         6 - Delete Table
-        7 - Drop Database
-        8 - Go Back\n""")
+        7 - Perform Transaction
+        8 - Drop Database
+        9 - Go Back\n""")
     return userSelction
 
 

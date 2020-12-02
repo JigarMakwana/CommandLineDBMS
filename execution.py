@@ -46,8 +46,11 @@ class Execution:
                 executeQuery()
             elif (userInput == "7"):
                 # deleteTableQuery = input("Enter Database Name to drop: ")
-                executeQuery()
+                transactionManger()
             elif (userInput == "8"):
+                # deleteTableQuery = input("Enter Database Name to drop: ")
+                executeQuery()
+            elif (userInput == "9"):
                 isLoggedIn = user_class.User.logOut()
                 break
             else:
