@@ -1,7 +1,7 @@
 # author: Jigar Makwana B00842568
 from queryParser.queryParser import parseQuery
 # from queryExecutor.queryExecutor import executeQuery, set_db_name
-from queryExecutor.transactionMngr import executeQuery, set_db_name
+from queryExecutor.transactionMngr import executeQuery, setUserDBName
 from userManagement import functions
 from userManagement import user_class
 from os import path, listdir
@@ -29,7 +29,8 @@ class Execution:
             elif (userInput == "2"):
                 dbname = input("Enter an existing Database Name: ")
                 Execution.set_db_name(dbname)
-                set_db_name(dbname + "/")
+                setUserDBName(dbname + "/" , username)
+                print(dbname + ' database selected successfully')
             elif (userInput == "3"):
                 dbname = input("Enter a new Database Name: ")
                 Execution.set_db_name(dbname)

@@ -1,0 +1,2 @@
+username, dataBase, tableName, isLocked
+test,datadb,sample,yes
