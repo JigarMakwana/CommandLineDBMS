@@ -655,7 +655,7 @@ def checkIfStringOrNumber(value):
         return False
 
 #parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons(PersonID));','904','Rajni')
-parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );','904','Rajni')
+#parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );','904','Rajni')
 #parseQuery('create table 904','904','Rajni')
 #parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','904','Rajni');
 
