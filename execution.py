@@ -56,14 +56,16 @@ class Execution:
 
     def createDBUserMap(dbName, userName):
         mapEntry = [dbName, userName]
+        mapData = []
+        mapData.append(mapEntry)
         myFile = open(dd_path + 'dbUserMap.csv', 'a', newline='')
         with myFile:
             writer = csv.writer(myFile)
-            writer.writerows((mapEntry[0], mapEntry[1]))
+            writer.writerows(mapData)
         print("\ndbUserMap.csv updated!")
 
     def createMetaData(db_name, parseCreateData):
-        jsonData = json.dumps(parseCreateData)
+        jsonData = json.dumps(parseCreateData, indent=4)
         f = open(dd_path + db_name + '.json',"a")
         f.write(jsonData)
         f.close()

@@ -650,5 +650,5 @@ def checkIfStringOrNumber(value):
         return False
 
 #parseQuery('create database 903','903','Rajni')
-parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','901','Rajni');
+# parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','901','Rajni');
 
