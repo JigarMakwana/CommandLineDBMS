@@ -6,9 +6,14 @@ from userManagement import functions
 from userManagement import user_class
 from os import path, listdir
 import csv
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
 import json
 
 db_path = "database/"
+dd_path = "dataDictonary/"
+
 dd_path = "dataDictonary/dbDic/"
 db_name = ''
 
@@ -16,10 +21,11 @@ class Execution:
     def set_db_name(dbname):
         global db_name
         db_name = dbname
-        
+
     def ExecutionMenu(username):
         while (True):
             print('User in session: ' + username)
+            logging.warning('User in session: ' + username)
             userInput = functions.display_CRUD_options()
             if (userInput == "1"):
                 dbname = input("Enter a new Database Name: ")
@@ -32,6 +38,7 @@ class Execution:
                 setUserDBName(dbname + "/" , username)
                 print(dbname + ' database selected successfully')
             elif (userInput == "3"):
+                # createTableQuery = input("Enter Create Table Query: ")
                 dbname = input("Enter a new Database Name: ")
                 Execution.set_db_name(dbname)
                 createTableQuery = input("Enter Create Table Query: ")
@@ -39,13 +46,13 @@ class Execution:
                 executeQuery()
             elif (userInput == "4"):
                 # updateTableQuery = input("Enter Update Table Query: ")
-                executeQuery()
+                executeQuery(username)
             elif (userInput == "5"):
                 # readTableQuery = input("Enter Read Table Query: ")
-                executeQuery()
+                executeQuery(username)
             elif (userInput == "6"):
                 # deleteTableQuery = input("Enter Delete Table Query: ")
-                executeQuery()
+                executeQuery(username)
             elif (userInput == "7"):
                 # deleteTableQuery = input("Enter Database Name to drop: ")
                 transactionManger()

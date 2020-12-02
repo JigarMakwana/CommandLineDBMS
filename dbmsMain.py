@@ -1,7 +1,13 @@
 #author: Jigar Makwana B00842568
+from queryParser.queryParser import parseQuery
+from queryExecutor.queryExecutor import executeQuery
 from userManagement import functions
 from userManagement import user_class
 from execution import Execution
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
+
 from dbERD.dbERD import generateERD
 from sqlDump.sqlDump import createDump
 
@@ -9,6 +15,7 @@ class DBMSMain:
     def DBMSMainMenu(username):
         while( True ):
             print('User in session: ' + username)
+            logging.warning('User in session: ' + username)
             userInput = functions.display_DBMS_options()
             if(userInput == "1"):
                 Execution.ExecutionMenu(username)

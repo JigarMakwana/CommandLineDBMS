@@ -1,4 +1,7 @@
-#author: Jigar Makwana B00842568
+# author: Jigar Makwana B00842568
+
+
+
 
 def display_options():
     print("\nHello! Welcome to the user CSCI5408 DBMS!")
@@ -9,6 +12,7 @@ def display_options():
         4 - Go To DBMS Menu
         5 - Quit\n""")
     return userSelction
+
 
 def display_DBMS_options():
     print("\nHello! You are now Logged into CSCI5408 DBMS!")
@@ -22,6 +26,7 @@ def display_DBMS_options():
         7 - Logout\n""")
     return userSelction
 
+
 def display_CRUD_options():
     userSelction = input("""Please select the option
         1 - Create a new Database
@@ -34,6 +39,3 @@ def display_CRUD_options():
         8 - Drop Database
         9 - Go Back\n""")
     return userSelction
-
-
-
