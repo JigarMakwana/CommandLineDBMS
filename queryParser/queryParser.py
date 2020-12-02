@@ -93,11 +93,11 @@ def checkCreateStep(query,DB_Name):
     if fromVal == "table":
         tableName = listQuery.pop(0)
         qTableName.append(tableName)
-        directoryPath = path + "/database/" + DB_Name
+        directoryPath = path + "/sqlDump/" + DB_Name
 
-        fullPath = directoryPath + "/data"
-        dumpPath = "sqlDump/" + DB_Name
-        with open(dumpPath, "a") as file1:
+        #fullPath = directoryPath + "/data"
+        #dumpPath = "sqlDump/" + DB_Name
+        with open(directoryPath, "a") as file1:
             toFile = query + "\n"
             file1.write(toFile)
 
@@ -105,12 +105,12 @@ def checkCreateStep(query,DB_Name):
 
     elif fromVal == "database":
         databaseName = listQuery.pop(0)
-        os.mkdir(path + "/database/" + databaseName)
-        directoryPath = path + "/database/" + DB_Name
-
-        fullPath = directoryPath + "/data"
-        dumpPath = "sqlDump/" + DB_Name
-        with open(dumpPath, "x") as file1:
+        # os.mkdir(path + "/database/" + databaseName)
+        directoryPath = path + "/sqlDump/" + DB_Name
+        #
+        # fullPath = directoryPath + "/data"
+        #dumpPath = "sqlDump/" + DB_Name
+        with open(directoryPath, "a") as file1:
             toFile = "\n"
             file1.write(toFile)
     return fromVal
@@ -383,10 +383,10 @@ def checkInsertStep(query,DB_Name):
     dirname = os.path.dirname
     path = os.path.join(dirname(dirname(__file__)))
 
-    directoryPath = path + "/database/" + DB_Name
-    fullPath = directoryPath + "/data"
-    dumpPath = "sqlDump/" + DB_Name
-    with open(dumpPath, "a") as file1:
+    directoryPath = path + "/sqlDump/" + DB_Name
+    #fullPath = directoryPath + "/data"
+    #dumpPath = "sqlDump/" + DB_Name
+    with open(directoryPath, "a") as file1:
         toFile = query + "\n"
         file1.write(toFile)
 
@@ -649,6 +649,7 @@ def checkIfStringOrNumber(value):
     else:
         return False
 
-#parseQuery('create database 903','903','Rajni')
-# parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','901','Rajni');
+#parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons(PersonID));','904','Rajni')
+#parseQuery('create table 904','904','Rajni')
+#parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','904','Rajni');
 
