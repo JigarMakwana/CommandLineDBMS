@@ -9,8 +9,6 @@ import logging
 
 logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
 
-
-
 db_path = "database/"
 dd_path = "dataDictonary/"
 
@@ -31,19 +29,19 @@ class Execution:
                 set_db_name(dbname + "/")
             elif (userInput == "3"):
                 # createTableQuery = input("Enter Create Table Query: ")
-                executeQuery()
+                executeQuery(username)
             elif (userInput == "4"):
                 # updateTableQuery = input("Enter Update Table Query: ")
-                executeQuery()
+                executeQuery(username)
             elif (userInput == "5"):
                 # readTableQuery = input("Enter Read Table Query: ")
-                executeQuery()
+                executeQuery(username)
             elif (userInput == "6"):
                 # deleteTableQuery = input("Enter Delete Table Query: ")
-                executeQuery()
+                executeQuery(username)
             elif (userInput == "7"):
                 # deleteTableQuery = input("Enter Database Name to drop: ")
-                executeQuery()
+                executeQuery(username)
             elif (userInput == "8"):
                 isLoggedIn = user_class.User.logOut()
                 break

@@ -13,7 +13,7 @@ def set_db_name(dbname):
     db = dbname
 
 
-def executeQuery():
+def executeQuery(username):
     db_main = db_path + db
     if path.exists(db_main):
 
@@ -26,8 +26,9 @@ def executeQuery():
         while True:
             query = input(">> ")
             try:
-                parser = qp.parseQuery(query)
-                print(parser)
+                if query == 'quit':
+                    break
+                parser = qp.parseQuery(query, db, username)
 
                 # query: select
                 if parser['Type'] == 'select':

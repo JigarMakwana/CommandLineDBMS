@@ -62,7 +62,7 @@ def parseQuery(query, DB_Name, UserName):
             "WhereValues": qWhereValues,
             "Error": ""
         }
-        print(parsedData)
+        # print(parsedData)
         return parsedData
     elif returnValue == "CreateTable":
         parsedData = {
@@ -80,6 +80,7 @@ def parseQuery(query, DB_Name, UserName):
 
 
 def resetResult():
+    global qType, qTableName, qInserts, qFields, qUpdates, qWhereFields, qWhereValues, colList, listQuery
     qType = ""
     qTableName = []
     qInserts = []
@@ -88,6 +89,7 @@ def resetResult():
     qWhereFields = []
     qWhereValues = []
     colList = []
+    listQuery = []
 
 
 def checkCreateStep(query, DB_Name):
