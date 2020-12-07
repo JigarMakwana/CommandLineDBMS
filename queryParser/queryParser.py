@@ -254,7 +254,7 @@ def checkDeleteStep():
                             logging.warning("Invalid query: expected condition in where clause")
                             return False
                         else:
-                            print("Successfully parsed query")
+                            # #print("Successfully parsed query")
                             logging.warning("Successfully parsed query")
                             return True
                     else:
@@ -266,7 +266,7 @@ def checkDeleteStep():
                     logging.warning("Invalid query")
                     return False
                 else:
-                    print("Successfully parsed query")
+                    #print("Successfully parsed query")
                     logging.warning("Successfully parsed query")
                     return True
             else:
@@ -396,7 +396,7 @@ def checkUpdateStep():
                         logging.warning("Invalid query: expected condition in where clause")
                         return False
                     else:
-                        print("Successfully parsed query")
+                        #print("Successfully parsed query")
                         logging.warning("Successfully parsed query")
                         return True
                 else:
@@ -404,7 +404,7 @@ def checkUpdateStep():
                     logging.warning("Invalid query: condition expected after where clause")
                     return False
             else:
-                print("Successfully parsed query")
+                #print("Successfully parsed query")
                 logging.warning("Successfully parsed query")
                 return True
         else:
@@ -515,7 +515,7 @@ def checkInsertStep(query, DB_Name):
                                 logging.warning("Invalid query: expected values to insert")
                                 return False
                             if lastValue == ")":
-                                print("Successfully parsed query")
+                                #print("Successfully parsed query")
                                 logging.warning("Successfully parsed query")
                                 return True
                             else:
@@ -637,7 +637,7 @@ def checkSelectStep():
                     logging.warning("Invalid query: expected condition in where clause")
                     return False
                 else:
-                    print("Successfully parsed query")
+                    #print("Successfully parsed query")
                     logging.warning("Successfully parsed query")
                     return True
             else:
@@ -645,7 +645,7 @@ def checkSelectStep():
                 logging.warning("Invalid query: condition expected after where clause")
                 return False
     else:
-        print("Successfully parsed query")
+        #print("Successfully parsed query")
         logging.warning("Successfully parsed query")
         return True
 

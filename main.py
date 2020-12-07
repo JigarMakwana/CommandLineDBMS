@@ -32,7 +32,7 @@ if __name__ == '__main__':
             User.addUser(username, password)
         elif (userInput == "3"):
             User.displayUsers()
-        elif (userInput == "5"):
+        elif (userInput == "4"):
             print("Quitting CSCI5408 DBMS....")
             logging.warning("Quitting CSCI5408 DBMS....")
             sys.exit(0)

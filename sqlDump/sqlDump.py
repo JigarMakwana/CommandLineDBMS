@@ -2,5 +2,10 @@
 import csv
 import json
 
+dump_path = "sqlDump/"
+
 def createDump(dbname):
-    print("Sql dump sucessfully created. Go To folder sqlDump for dumps")
+    print("Printing the Sql dump...\n")
+    with open(dump_path + dbname, 'r') as f:
+        for line in f:
+            print(line)

@@ -13,8 +13,6 @@ import json
 
 db_path = "database/"
 dd_path = "dataDictonary/"
-
-dd_path = "dataDictonary/dbDic/"
 db_name = ''
 
 class Execution:
@@ -38,28 +36,17 @@ class Execution:
                 setUserDBName(dbname + "/" , username)
                 print(dbname + ' database selected successfully')
             elif (userInput == "3"):
-                # createTableQuery = input("Enter Create Table Query: ")
+                createTableQuery = input("Enter Create Table Query: ")
                 dbname = input("Enter a new Database Name: ")
                 Execution.set_db_name(dbname)
                 createTableQuery = input("Enter Create Table Query: ")
                 Execution.createMetaData(db_name, parseQuery(createTableQuery, db_name, username))
                 executeQuery()
-            elif (userInput == "4"):
-                # updateTableQuery = input("Enter Update Table Query: ")
-                executeQuery(username)
-            elif (userInput == "5"):
-                # readTableQuery = input("Enter Read Table Query: ")
-                executeQuery(username)
-            elif (userInput == "6"):
-                # deleteTableQuery = input("Enter Delete Table Query: ")
-                executeQuery(username)
-            elif (userInput == "7"):
-                # deleteTableQuery = input("Enter Database Name to drop: ")
-                transactionManger()
-            elif (userInput == "8"):
-                # deleteTableQuery = input("Enter Database Name to drop: ")
+            elif (userInput == "3"):
                 executeQuery()
-            elif (userInput == "9"):
+            elif (userInput == "4"):
+                executeQuery()
+            elif (userInput == "5"):
                 isLoggedIn = user_class.User.logOut()
                 break
             else:
