@@ -1,3 +1,0 @@
-insert into sample ( username , identifier , password , recovery , firstname , lastname , department , location ) values ( karan , 6697 , karan123 , no , karan , kharecha , computer , canada )
-insert into sample ( username , identifier , password , recovery , firstname , lastname , department , location ) values ( karan , 6697 , karan123 , no , karan , kharecha , computer , canada )
-insert into sample ( username , identifier , password , recovery , firstname , lastname , department , location ) values ( karan , 6697 , karan123 , no , karan , kharecha , computer , canada )

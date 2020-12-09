@@ -1,8 +1,4 @@
 # author: Jigar Makwana B00842568
-
-
-
-
 def display_options():
     print("\nHello! Welcome to the user CSCI5408 DBMS!")
     userSelction = input("""Please select the option

@@ -1,6 +1,7 @@
 from os import path, listdir
 import logging
 import queryParser.queryParser as qp
+from dataDictonary.createMetaData import createMetaData
 
 db_path = "database/"
 
@@ -8,12 +9,12 @@ logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs
 db = ''
 
 
-def set_db_name(dbname):
+def q_set_db_name(dbname):
     global db
     db = dbname
 
 
-def executeQuery(username):
+def qExecuteQuery(username):
     db_main = db_path + db
     if path.exists(db_main):
 
@@ -28,6 +29,7 @@ def executeQuery(username):
             try:
                 if query == 'quit':
                     break
+
                 parser = qp.parseQuery(query, db, username)
 
                 # query: select
@@ -127,6 +129,7 @@ def executeQuery(username):
 
                 # query: create
                 elif parser['Type'] == 'create':
+                    createMetaData(db_name, parser)
                     with open(db_main + parser['Table'][0].lower(), 'w') as table:
                         print(table)
 

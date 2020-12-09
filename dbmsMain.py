@@ -1,6 +1,4 @@
 #author: Jigar Makwana B00842568
-from queryParser.queryParser import parseQuery
-from queryExecutor.queryExecutor import executeQuery
 from userManagement import functions
 from userManagement import user_class
 from execution import Execution

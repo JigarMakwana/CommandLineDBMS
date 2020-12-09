@@ -1,10 +1,11 @@
 # author: Jigar Makwana B00842568
 from queryParser.queryParser import parseQuery
-# from queryExecutor.queryExecutor import executeQuery, set_db_name
+from queryExecutor.queryExecutor import qExecuteQuery, q_set_db_name
 from queryExecutor.transactionMngr import executeQuery, setUserDBName
+from dataDictonary.createMetaData import createDBUserMap
 from userManagement import functions
 from userManagement import user_class
-from os import path, listdir
+import os
 import csv
 import logging
 
@@ -12,7 +13,6 @@ logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs
 import json
 
 db_path = "database/"
-dd_path = "dataDictonary/"
 db_name = ''
 
 class Execution:
@@ -27,23 +27,31 @@ class Execution:
             userInput = functions.display_CRUD_options()
             if (userInput == "1"):
                 dbname = input("Enter a new Database Name: ")
-                # isDatabaseCreated = executeQuery(dbname + "/")
-                if (True):
-                    Execution.createDBUserMap(dbname, username)
+                directory = dbname
+                newDBPath = os.path.join(db_path, directory)  
+                try:
+                    os.mkdir(newDBPath)
+                    createDBUserMap(dbname, username)
+                    print(f"\nDatabase {dbname} sucessfully created!")
+                    logging.info(f"\nDatabase {dbname} sucessfully created!")
+                except OSError as error:  
+                    print(f"\nDatabase {dbname} already exist!")
+                    logging.warning(f"\nDatabase {dbname} already exist!")
             elif (userInput == "2"):
                 dbname = input("Enter an existing Database Name: ")
+                q_set_db_name(dbname)
                 Execution.set_db_name(dbname)
                 setUserDBName(dbname + "/" , username)
                 print(dbname + ' database selected successfully')
+                logging.info(dbname + ' database selected successfully')
             elif (userInput == "3"):
-                createTableQuery = input("Enter Create Table Query: ")
-                dbname = input("Enter a new Database Name: ")
-                Execution.set_db_name(dbname)
-                createTableQuery = input("Enter Create Table Query: ")
-                Execution.createMetaData(db_name, parseQuery(createTableQuery, db_name, username))
-                executeQuery()
+                # createTableQuery = input("Enter Create Table Query: ")
+                # dbname = input("Enter a new Database Name: ")
+                # Execution.set_db_name(dbname)
+                # Execution.createMetaData(db_name, parseQuery(createTableQuery, db_name, username))
+                qExecuteQuery(username)
             elif (userInput == "3"):
-                executeQuery()
+                qExecuteQuery(username)
             elif (userInput == "4"):
                 executeQuery()
             elif (userInput == "5"):
@@ -52,21 +60,4 @@ class Execution:
             else:
                 print("Please enter a valid option...")
             print("\n")
-
-    def createDBUserMap(dbName, userName):
-        mapEntry = [dbName, userName]
-        mapData = []
-        mapData.append(mapEntry)
-        myFile = open(dd_path + 'dbUserMap.csv', 'a', newline='')
-        with myFile:
-            writer = csv.writer(myFile)
-            writer.writerows(mapData)
-        print("\ndbUserMap.csv updated!")
-
-    def createMetaData(db_name, parseCreateData):
-        jsonData = json.dumps(parseCreateData, indent=4)
-        f = open(dd_path + db_name + '.json',"a")
-        f.write(jsonData)
-        f.close()
-        print("\nmetadata file updated!")
 

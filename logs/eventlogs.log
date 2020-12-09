@@ -7792,3 +7792,395 @@ Successfully Signed into CSCI5408 DBMS
 2020-12-07 13:36:05,167 - 
 A new lock is acquired on table sample by user test
 2020-12-07 13:36:05,169 - Update query executed successfully.
+2020-12-07 13:38:30,548 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-07 13:38:30,549 - User in session: test
+2020-12-07 13:38:31,638 - User in session: test
+2020-12-07 13:38:34,988 - User in session: test
+2020-12-07 13:38:51,614 - Invalid query
+2020-12-07 13:38:58,393 - Invalid query
+2020-12-07 13:38:58,393 - Query is parsed successfully.
+2020-12-07 13:38:58,393 - {'Error': 'Invalid query'}
+2020-12-07 13:38:58,394 - Lock is not released by other transaction
+2020-12-07 13:39:21,974 - Successfully parsed query
+2020-12-07 13:39:21,974 - Query is parsed successfully.
+2020-12-07 13:39:21,974 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-07 13:39:21,976 - Select query executed successfully.
+2020-12-09 01:59:23,611 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 01:59:23,612 - User in session: test
+2020-12-09 01:59:28,243 - User in session: test
+2020-12-09 01:59:32,686 - User in session: test
+2020-12-09 02:00:38,295 - Successfully parsed query
+2020-12-09 02:00:38,295 - Query is parsed successfully.
+2020-12-09 02:00:38,295 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['2000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:00:38,297 - 
+A new lock is acquired on table sample by user test
+2020-12-09 02:00:38,300 - Update query executed successfully.
+2020-12-09 02:01:29,388 - Lock is released
+2020-12-09 02:04:19,172 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 02:04:19,172 - User in session: test
+2020-12-09 02:04:21,059 - User in session: test
+2020-12-09 02:04:24,657 - User in session: test
+2020-12-09 02:05:57,127 - Successfully parsed query
+2020-12-09 02:05:57,127 - Query is parsed successfully.
+2020-12-09 02:05:57,127 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['2000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:05:57,129 - 
+A new lock is acquired on table sample by user test
+2020-12-09 02:05:57,133 - Update query executed successfully.
+2020-12-09 02:07:01,365 - Lock is released
+2020-12-09 02:09:44,052 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 02:09:44,052 - User in session: test
+2020-12-09 02:09:46,726 - User in session: test
+2020-12-09 02:09:50,699 - User in session: test
+2020-12-09 02:10:31,348 - Successfully parsed query
+2020-12-09 02:10:31,348 - Query is parsed successfully.
+2020-12-09 02:10:31,349 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['5000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:10:31,350 - 
+A new lock is acquired on table sample by user test
+2020-12-09 02:10:31,354 - Update query executed successfully.
+2020-12-09 02:11:56,314 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 02:11:56,314 - User in session: hello
+2020-12-09 02:11:58,640 - User in session: hello
+2020-12-09 02:12:14,503 - User in session: hello
+2020-12-09 02:12:37,778 - Successfully parsed query
+2020-12-09 02:12:37,778 - Query is parsed successfully.
+2020-12-09 02:12:37,778 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 02:12:37,779 - Lock is not released by other transaction
+2020-12-09 02:12:37,783 - Lock is released
+2020-12-09 02:12:51,584 - Successfully parsed query
+2020-12-09 02:12:51,584 - Query is parsed successfully.
+2020-12-09 02:12:51,584 - {'Type': 'select', 'Database': [], 'Table': ['sample.csv'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 02:12:51,591 - Select query executed successfully.
+2020-12-09 02:13:25,650 - Successfully parsed query
+2020-12-09 02:13:25,651 - Query is parsed successfully.
+2020-12-09 02:13:25,651 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['7000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:13:25,652 - 
+A new lock is acquired on table sample by user hello
+2020-12-09 02:13:25,656 - Update query executed successfully.
+2020-12-09 02:14:16,789 - Successfully parsed query
+2020-12-09 02:14:16,789 - Query is parsed successfully.
+2020-12-09 02:14:16,789 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['8000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:14:19,791 - Wainting for other transaction to release the lock
+2020-12-09 02:14:19,792 - Lock is not released by other transaction
+2020-12-09 02:14:19,795 - Lock is released
+2020-12-09 02:22:32,654 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 02:22:32,655 - User in session: test
+2020-12-09 02:22:35,131 - User in session: test
+2020-12-09 02:22:49,686 - User in session: test
+2020-12-09 02:23:28,287 - Successfully parsed query
+2020-12-09 02:23:28,287 - Query is parsed successfully.
+2020-12-09 02:23:28,287 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 02:23:28,287 - Lock is not released by other transaction
+2020-12-09 02:23:43,285 - Successfully parsed query
+2020-12-09 02:23:43,288 - Query is parsed successfully.
+2020-12-09 02:23:43,288 - {'Type': 'select', 'Database': [], 'Table': ['sample.csv'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 02:23:43,290 - Lock is not released by other transaction
+2020-12-09 02:24:56,068 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 02:24:56,068 - User in session: test
+2020-12-09 02:24:57,839 - User in session: test
+2020-12-09 02:25:02,037 - User in session: test
+2020-12-09 02:25:16,947 - User in session: test
+2020-12-09 02:25:40,338 - Successfully parsed query
+2020-12-09 02:25:40,338 - Query is parsed successfully.
+2020-12-09 02:25:40,339 - {'Type': 'select', 'Database': [], 'Table': ['select'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 02:25:40,339 - Lock is not released by other transaction
+2020-12-09 02:25:51,211 - Successfully parsed query
+2020-12-09 02:25:51,211 - Query is parsed successfully.
+2020-12-09 02:25:51,211 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 02:25:51,214 - Select query executed successfully.
+2020-12-09 02:26:28,643 - Successfully parsed query
+2020-12-09 02:26:28,643 - Query is parsed successfully.
+2020-12-09 02:26:28,643 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['5000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:26:28,645 - 
+A new lock is acquired on table sample by user test
+2020-12-09 02:26:28,647 - Update query executed successfully.
+2020-12-09 02:27:38,070 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 02:27:38,071 - User in session: hello
+2020-12-09 02:27:39,553 - User in session: hello
+2020-12-09 02:27:44,880 - User in session: hello
+2020-12-09 02:28:05,908 - Successfully parsed query
+2020-12-09 02:28:05,908 - Query is parsed successfully.
+2020-12-09 02:28:05,908 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 02:28:05,914 - Select query executed successfully.
+2020-12-09 02:28:29,417 - Successfully parsed query
+2020-12-09 02:28:29,417 - Query is parsed successfully.
+2020-12-09 02:28:29,417 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['7000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:28:32,419 - Wainting for other transaction to release the lock
+2020-12-09 02:28:32,420 - Lock is not released by other transaction
+2020-12-09 02:30:42,633 - Lock is released
+2020-12-09 02:31:33,347 - Successfully parsed query
+2020-12-09 02:31:33,347 - Query is parsed successfully.
+2020-12-09 02:31:33,348 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['7000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:31:33,350 - 
+A new lock is acquired on table sample by user hello
+2020-12-09 02:31:33,353 - Update query executed successfully.
+2020-12-09 02:31:42,854 - Query is parsed successfully.
+2020-12-09 02:31:42,855 - {'Error': 'Invalid query'}
+2020-12-09 02:31:42,856 - Lock is not released by other transaction
+2020-12-09 02:34:07,979 - Lock is released
+2020-12-09 02:36:01,451 - Successfully parsed query
+2020-12-09 02:36:01,451 - Query is parsed successfully.
+2020-12-09 02:36:01,451 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['2000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:36:01,453 - 
+A new lock is acquired on table sample by user test
+2020-12-09 02:36:01,455 - Update query executed successfully.
+2020-12-09 02:36:48,275 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 02:36:48,275 - User in session: hello
+2020-12-09 02:36:49,785 - User in session: hello
+2020-12-09 02:36:53,978 - User in session: hello
+2020-12-09 02:37:21,104 - Successfully parsed query
+2020-12-09 02:37:21,104 - Query is parsed successfully.
+2020-12-09 02:37:21,104 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['100'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:37:21,105 - Wainting for other transaction to release the lock...
+2020-12-09 02:37:24,110 - Lock is not released by other transaction
+2020-12-09 02:38:00,136 - Lock is released
+2020-12-09 02:39:33,401 - Successfully parsed query
+2020-12-09 02:39:33,401 - Query is parsed successfully.
+2020-12-09 02:39:33,401 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['50'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:39:33,403 - 
+A new lock is acquired on table sample by user hello
+2020-12-09 02:39:33,407 - Update query executed successfully.
+2020-12-09 02:40:33,914 - Successfully parsed query
+2020-12-09 02:40:33,914 - Query is parsed successfully.
+2020-12-09 02:40:33,914 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['100'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 02:40:36,915 - Wainting for other transaction to release the lock
+2020-12-09 02:40:36,919 - Lock is not released by other transaction
+2020-12-09 03:47:29,855 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 03:47:29,856 - User in session: test
+2020-12-09 03:47:33,171 - User in session: test
+2020-12-09 03:47:59,050 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 03:47:59,051 - User in session: hello
+2020-12-09 03:48:00,734 - User in session: hello
+2020-12-09 03:48:14,225 - User in session: test
+2020-12-09 03:48:19,759 - User in session: test
+2020-12-09 03:48:30,029 - User in session: hello
+2020-12-09 03:49:02,732 - Successfully parsed query
+2020-12-09 03:49:02,732 - Query is parsed successfully.
+2020-12-09 03:49:02,732 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 03:49:02,736 - Select query executed successfully.
+2020-12-09 03:49:06,662 - Successfully parsed query
+2020-12-09 03:49:06,662 - Query is parsed successfully.
+2020-12-09 03:49:06,663 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 03:49:06,670 - Select query executed successfully.
+2020-12-09 03:49:59,670 - Successfully parsed query
+2020-12-09 03:49:59,670 - Query is parsed successfully.
+2020-12-09 03:49:59,670 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['5000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 03:49:59,672 - 
+A new lock is acquired on table sample by user test
+2020-12-09 03:49:59,674 - Update query executed successfully.
+2020-12-09 03:50:27,510 - Successfully parsed query
+2020-12-09 03:50:27,510 - Query is parsed successfully.
+2020-12-09 03:50:27,510 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 03:50:27,511 - Wainting for other transaction to release the lock...
+2020-12-09 03:50:31,514 - Exclusive Lock is not released by other transaction
+2020-12-09 03:50:56,227 - Lock is released
+2020-12-09 10:08:27,095 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 10:08:27,096 - User in session: test
+2020-12-09 10:08:28,459 - User in session: test
+2020-12-09 10:08:31,966 - User in session: test
+2020-12-09 10:08:51,823 - Successfully parsed query
+2020-12-09 10:08:51,823 - Query is parsed successfully.
+2020-12-09 10:08:51,823 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 10:08:51,828 - Select query executed successfully.
+2020-12-09 10:09:17,325 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 10:09:17,325 - User in session: hello
+2020-12-09 10:09:19,297 - User in session: hello
+2020-12-09 10:09:23,691 - User in session: hello
+2020-12-09 10:09:44,617 - Successfully parsed query
+2020-12-09 10:09:44,617 - Query is parsed successfully.
+2020-12-09 10:09:44,617 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 10:09:44,623 - Select query executed successfully.
+2020-12-09 10:10:04,888 - Successfully parsed query
+2020-12-09 10:10:04,888 - Query is parsed successfully.
+2020-12-09 10:10:04,888 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['5000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 10:10:04,890 - 
+A new lock is acquired on table sample by user test
+2020-12-09 10:10:04,893 - Update query executed successfully.
+2020-12-09 10:10:42,258 - Successfully parsed query
+2020-12-09 10:10:42,259 - Query is parsed successfully.
+2020-12-09 10:10:42,259 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 10:10:42,259 - Wainting for other transaction to release the lock...
+2020-12-09 10:10:46,261 - Exclusive Lock is not released by other transaction
+2020-12-09 10:11:15,019 - Lock is released
+2020-12-09 10:12:13,534 - Successfully parsed query
+2020-12-09 10:12:13,534 - Query is parsed successfully.
+2020-12-09 10:12:13,534 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['700'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 10:12:13,536 - 
+A new lock is acquired on table sample by user hello
+2020-12-09 10:12:13,540 - Update query executed successfully.
+2020-12-09 10:12:54,079 - Successfully parsed query
+2020-12-09 10:12:54,079 - Query is parsed successfully.
+2020-12-09 10:12:54,079 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['100'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 10:12:54,080 - Wainting for other transaction to release the lock...
+2020-12-09 10:12:58,083 - Exclusive Lock is not released by other transaction
+2020-12-09 10:13:32,263 - Lock is released
+2020-12-09 10:13:51,140 - User in session: hello
+2020-12-09 10:13:53,447 - User in session: hello
+2020-12-09 10:13:58,816 - Quitting CSCI5408 DBMS....
+2020-12-09 10:24:23,050 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 10:24:23,050 - User in session: test
+2020-12-09 10:24:50,286 - User in session: test
+2020-12-09 10:37:14,387 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 10:37:14,388 - User in session: test
+2020-12-09 10:37:17,357 - User in session: test
+2020-12-09 10:37:30,083 - User in session: test
+2020-12-09 10:38:11,075 - User in session: test
+2020-12-09 11:09:37,345 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 11:09:37,345 - User in session: test
+2020-12-09 11:09:43,411 - User in session: test
+2020-12-09 11:11:59,535 - 
+New user is saved in DBMS Database!
+2020-12-09 11:11:59,535 - 
+Sucessfully added a New user.
+
+2020-12-09 11:12:05,994 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 11:12:05,995 - User in session: shiv
+2020-12-09 11:12:10,455 - User in session: shiv
+2020-12-09 11:13:56,320 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 11:13:56,321 - User in session: shiv
+2020-12-09 11:13:57,612 - User in session: shiv
+2020-12-09 11:14:49,462 - 
+Invalid password
+2020-12-09 11:14:59,549 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 11:14:59,549 - User in session: shiv
+2020-12-09 11:15:00,872 - User in session: shiv
+2020-12-09 11:15:04,291 - User in session: shiv
+2020-12-09 11:17:55,946 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 11:17:55,947 - User in session: shiv
+2020-12-09 11:18:09,847 - User in session: shiv
+2020-12-09 11:18:16,799 - 
+Database shivdb already exist!
+2020-12-09 11:18:16,800 - User in session: shiv
+2020-12-09 11:19:23,151 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 11:19:23,152 - User in session: shiv
+2020-12-09 11:19:24,659 - User in session: shiv
+2020-12-09 11:19:31,081 - User in session: shiv
+2020-12-09 11:19:40,345 - User entered valid database: database/shivdb
+2020-12-09 11:19:59,586 - Query execution failed on database: shivdb
+2020-12-09 11:21:12,731 - Successfully parsed query
+2020-12-09 11:21:12,731 - Query execution failed on database: shivdb
+2020-12-09 11:24:34,240 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 11:24:34,241 - User in session: shiv
+2020-12-09 11:24:35,894 - User in session: shiv
+2020-12-09 11:24:39,820 - User in session: shiv
+2020-12-09 11:24:43,821 - User entered valid database: database/shivdb
+2020-12-09 11:27:09,075 - Query execution failed on database: shivdb
+2020-12-09 11:48:16,291 - Query execution failed on database: shivdb
+2020-12-09 12:07:09,654 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:07:09,655 - User in session: shiv
+2020-12-09 12:07:10,985 - User in session: shiv
+2020-12-09 12:07:16,703 - User in session: shiv
+2020-12-09 12:07:19,789 - User entered valid database: database/shivdb
+2020-12-09 12:09:15,075 - Query execution failed on database: shivdb
+2020-12-09 12:15:11,516 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:15:11,517 - User in session: test
+2020-12-09 12:15:23,971 - User in session: test
+2020-12-09 12:15:28,135 - User in session: test
+2020-12-09 12:16:06,649 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:16:06,649 - User in session: hello
+2020-12-09 12:16:07,769 - User in session: hello
+2020-12-09 12:16:10,932 - User in session: hello
+2020-12-09 12:16:31,363 - Successfully parsed query
+2020-12-09 12:16:31,364 - Query is parsed successfully.
+2020-12-09 12:16:31,364 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['5000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 12:16:31,366 - 
+A new lock is acquired on table sample by user test
+2020-12-09 12:16:31,404 - Update query executed successfully.
+2020-12-09 12:16:44,010 - Successfully parsed query
+2020-12-09 12:16:44,010 - Query is parsed successfully.
+2020-12-09 12:16:44,010 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:16:44,011 - Wainting for other transaction to release the lock...
+2020-12-09 12:16:48,014 - Exclusive Lock is not released by other transaction
+2020-12-09 12:23:27,134 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:23:27,136 - User in session: test
+2020-12-09 12:23:28,321 - User in session: test
+2020-12-09 12:23:31,256 - User in session: test
+2020-12-09 12:23:50,911 - Successfully parsed query
+2020-12-09 12:23:50,912 - Query is parsed successfully.
+2020-12-09 12:23:50,912 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:23:50,918 - Select query executed successfully.
+2020-12-09 12:24:00,750 - Successfully parsed query
+2020-12-09 12:24:00,751 - Query is parsed successfully.
+2020-12-09 12:24:00,751 - {'Type': 'select', 'Database': [], 'Table': ['hello'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:24:00,754 - Exclusive Lock is not released by other transaction
+2020-12-09 12:25:57,284 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:25:57,284 - User in session: test
+2020-12-09 12:25:58,564 - User in session: test
+2020-12-09 12:26:01,376 - User in session: test
+2020-12-09 12:26:17,741 - Successfully parsed query
+2020-12-09 12:26:17,742 - Query is parsed successfully.
+2020-12-09 12:26:17,742 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:26:17,749 - Select query executed successfully.
+2020-12-09 12:26:23,534 - Successfully parsed query
+2020-12-09 12:26:23,535 - Query is parsed successfully.
+2020-12-09 12:26:23,535 - {'Type': 'select', 'Database': [], 'Table': ['hello'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:26:50,110 - Successfully parsed query
+2020-12-09 12:26:50,112 - Query is parsed successfully.
+2020-12-09 12:26:50,112 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:26:50,117 - Select query executed successfully.
+2020-12-09 12:27:28,225 - Successfully parsed query
+2020-12-09 12:27:28,226 - Query is parsed successfully.
+2020-12-09 12:27:28,226 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['5000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 12:27:28,229 - Update query executed successfully.
+2020-12-09 12:27:57,888 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:27:57,888 - User in session: hello
+2020-12-09 12:27:59,337 - User in session: hello
+2020-12-09 12:28:02,045 - User in session: hello
+2020-12-09 12:28:16,629 - Successfully parsed query
+2020-12-09 12:28:16,629 - Query is parsed successfully.
+2020-12-09 12:28:16,629 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:28:16,630 - Wainting for other transaction to release the lock...
+2020-12-09 12:28:20,634 - Exclusive Lock is not released by other transaction
+2020-12-09 12:28:53,343 - Successfully parsed query
+2020-12-09 12:28:53,345 - Query is parsed successfully.
+2020-12-09 12:28:53,346 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['2000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 12:28:53,346 - Wainting for other transaction to release the lock...
+2020-12-09 12:28:57,349 - Exclusive Lock is not released by other transaction
+2020-12-09 12:29:14,644 - Lock is released
+2020-12-09 12:29:37,831 - Successfully parsed query
+2020-12-09 12:29:37,831 - Query is parsed successfully.
+2020-12-09 12:29:37,831 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:29:37,838 - Select query executed successfully.
+2020-12-09 12:29:48,058 - Successfully parsed query
+2020-12-09 12:29:48,058 - Query is parsed successfully.
+2020-12-09 12:29:48,058 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['2000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-09 12:29:48,060 - 
+A new lock is acquired on table sample by user hello
+2020-12-09 12:29:48,064 - Update query executed successfully.
+2020-12-09 12:29:56,938 - Successfully parsed query
+2020-12-09 12:29:56,938 - Query is parsed successfully.
+2020-12-09 12:29:56,939 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:29:56,946 - Select query executed successfully.
+2020-12-09 12:30:06,305 - Lock is released
+2020-12-09 12:30:09,575 - Successfully parsed query
+2020-12-09 12:30:09,575 - Query is parsed successfully.
+2020-12-09 12:30:09,576 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-09 12:30:09,584 - Select query executed successfully.
+2020-12-09 12:30:17,163 - User in session: hello
