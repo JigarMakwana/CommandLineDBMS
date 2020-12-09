@@ -2,7 +2,9 @@ import re;
 import os;
 import logging
 
-logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
+dirname1 = os.path.dirname
+path1 = os.path.join(dirname1(dirname1(__file__)))
+logging.basicConfig(format='%(asctime)s - %(message)s', filename= path1 + '/logs/eventlogs.log')
 qType = ""
 qTableName = []
 qInserts = []
@@ -62,20 +64,21 @@ def parseQuery(query, DB_Name, UserName):
             "WhereValues": qWhereValues,
             "Error": ""
         }
-        # print(parsedData)
+
         return parsedData
     elif returnValue == "CreateTable":
         parsedData = {
+            "Type": qType,
             "Database": DB_Name,
             "UserName": UserName,
-            "Table": qTableName.pop(0),
+            "Table": qTableName,
             "Columns":colList
         }
     else:
         parsedData = {
             "Error": "Invalid query"
         }
-
+    print(parsedData)
     return parsedData
 
 
@@ -108,8 +111,8 @@ def checkCreateStep(query, DB_Name):
         with open(directoryPath, "a") as file1:
             toFile = query + "\n"
             file1.write(toFile)
-
-        createColumnList(query)
+        if len(listQuery) > 0:
+            createColumnList(query)
 
     elif fromVal == "database":
         databaseName = listQuery.pop(0)
@@ -192,7 +195,7 @@ def createColumnList(query):
                   "isAutoIncrement": isAutoIncrement, "isPrimaryKey": isPrimaryKey, "isForeignKey": isForeignKey,
                   "referencesTable": referencesTable, "referencesKey":referencesKey, "default":default}
         colList.append(column)
-    print(colList)
+   # print(colList)
 
 
 def checkDeleteStep():
@@ -717,3 +720,15 @@ def checkIfStringOrNumber(value):
         return True
     else:
         return False
+
+#parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons(PersonID));','904','Rajni')
+#parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );','904','Rajni')
+#parseQuery('create table 904','904','Rajni')
+#parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','904','Rajni');
+#parseQuery('update sample set identifier = 5000 where username = '"grey07"'','904','Rajni');
+
+#parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );','904','Rajni')
+
+#parseQuery('CREATE TABLE Orders','904','Rajni')
+
+
