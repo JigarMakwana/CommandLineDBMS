@@ -2,7 +2,9 @@ import re;
 import os;
 import logging
 
-logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
+dirname1 = os.path.dirname
+path1 = os.path.join(dirname1(dirname1(__file__)))
+logging.basicConfig(format='%(asctime)s - %(message)s', filename= path1 + '/logs/eventlogs.log')
 qType = ""
 qTableName = []
 qInserts = []
@@ -62,7 +64,7 @@ def parseQuery(query, DB_Name, UserName):
             "WhereValues": qWhereValues,
             "Error": ""
         }
-        # print(parsedData)
+
         return parsedData
     elif returnValue == "CreateTable":
         parsedData = {
@@ -76,7 +78,7 @@ def parseQuery(query, DB_Name, UserName):
         parsedData = {
             "Error": "Invalid query"
         }
-
+    print(parsedData)
     return parsedData
 
 
