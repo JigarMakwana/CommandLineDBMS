@@ -4,3 +4,10 @@ create table hello
 CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );
 CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );
 create table hello
+CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );
+CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );
+CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );
+CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );
+CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );
+CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );
+CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );

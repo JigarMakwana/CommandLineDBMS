@@ -130,10 +130,17 @@ def qExecuteQuery(username):
                 # query: create
                 elif parser['Type'] == 'create':
                     createMetaData(db, parser)
-                    with open(db_main + parser['Table'][0].lower(), 'w') as table:
-                        print(table)
+                    header = ''
+                    for index in range(len(parser["Columns"])):
+                        for key in parser["Columns"][index]:
+                            if(key == "Name"):
+                                header = header + ',' + (parser["Columns"][index]["Name"])
+                    with open(db_main + '/' + parser['Table'][0].lower() + '.csv', 'w') as table:
+                        table.write(header)
+                        # print(table)
 
-            except:
+            except Exception as e:
+                print(e)
                 logging.error('Query execution failed on database: ' + db)
                 print("Operation failed..")
 

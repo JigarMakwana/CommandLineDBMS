@@ -8228,3 +8228,50 @@ Successfully Signed into CSCI5408 DBMS
 2020-12-09 13:05:38,835 - User in session: test
 2020-12-09 13:05:46,584 - User in session: test
 2020-12-09 13:06:13,424 - Quitting CSCI5408 DBMS....
+2020-12-09 13:08:30,805 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:08:30,807 - User in session: test
+2020-12-09 13:08:34,438 - User in session: test
+2020-12-09 13:08:37,024 - User in session: test
+2020-12-09 13:08:41,851 - User entered valid database: database/datadb
+2020-12-09 13:15:43,739 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:15:43,740 - User in session: test
+2020-12-09 13:15:51,091 - User in session: test
+2020-12-09 13:15:54,296 - User in session: test
+2020-12-09 13:15:57,647 - User entered valid database: database/datadb
+2020-12-09 13:16:08,880 - Query execution failed on database: datadb
+2020-12-09 13:17:30,958 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:17:30,959 - User in session: test
+2020-12-09 13:17:32,364 - User in session: test
+2020-12-09 13:17:34,962 - User in session: test
+2020-12-09 13:17:41,038 - User entered valid database: database/datadb
+2020-12-09 13:18:15,363 - Query execution failed on database: datadb
+2020-12-09 13:20:21,237 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:20:21,238 - User in session: test
+2020-12-09 13:20:22,501 - User in session: test
+2020-12-09 13:20:26,675 - User in session: test
+2020-12-09 13:20:29,781 - User entered valid database: database/datadb
+2020-12-09 13:20:53,331 - Query execution failed on database: datadb
+2020-12-09 13:23:33,974 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:23:33,975 - User in session: test
+2020-12-09 13:23:35,506 - User in session: test
+2020-12-09 13:23:38,400 - User in session: test
+2020-12-09 13:23:43,757 - User entered valid database: database/datadb
+2020-12-09 13:23:48,355 - Query execution failed on database: datadb
+2020-12-09 13:26:11,457 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:26:11,457 - User in session: test
+2020-12-09 13:26:13,377 - User in session: test
+2020-12-09 13:26:16,536 - User in session: test
+2020-12-09 13:26:18,658 - User entered valid database: database/datadb
+2020-12-09 13:27:45,150 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:27:45,151 - User in session: test
+2020-12-09 13:28:14,901 - User in session: test
+2020-12-09 13:28:21,109 - User in session: test
+2020-12-09 13:28:32,905 - User in session: test
+2020-12-09 13:28:35,746 - User entered valid database: database/datadb
