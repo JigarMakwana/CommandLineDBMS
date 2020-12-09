@@ -1,0 +1,36 @@
+
+Database Name is :datadb
+
+Table Name is :orders
+Column details are as follow: 
+
+Column Name is :ordername
+Column Data Type is :varchar(255)
+ordername cannot be Null
+ordername is not Unique
+ordername is not Auto Increment
+ordername is not PrimaryKey
+ordername is not ForeignKey
+ordername does not have any default value
+
+
+Column Name is :ordernumber
+Column Data Type is :int
+ordernumber cannot be Null
+ordernumber is not Unique
+ordernumber is not Auto Increment
+ordernumber is not PrimaryKey
+ordernumber is not ForeignKey
+ordernumber's default value is sandnes
+
+
+Column Name is :personid
+Column Data Type is :int
+personid cannot be Null
+personid is not Unique
+personid is not Auto Increment
+personid is not PrimaryKey
+personid is not ForeignKey
+personid does not have any default value
+
+

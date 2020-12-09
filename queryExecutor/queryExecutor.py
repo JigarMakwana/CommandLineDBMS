@@ -129,7 +129,7 @@ def qExecuteQuery(username):
 
                 # query: create
                 elif parser['Type'] == 'create':
-                    createMetaData(db_name, parser)
+                    createMetaData(db, parser)
                     with open(db_main + parser['Table'][0].lower(), 'w') as table:
                         print(table)
 

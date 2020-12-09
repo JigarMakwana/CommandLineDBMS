@@ -8,66 +8,71 @@ def generateERD(dbname):
         parseData = json.load(json_file)
     erdList = []
     print('\nPrinting ERD...')
-    print('\nTable Name is :' + parseData["Database"])
-    erdList.append('\nTable Name is :' + parseData["Database"])
-    erdList.append('Column details are as follow: \n')
-    print('Column details are as follow: \n')
-    for index in range(len(parseData["Cloumn"])):
-        for key in parseData["Cloumn"][index]:
+
+    print('\nDatabase Name is :' + parseData["Database"])
+    erdList.append('\nDatabase Name is :' + parseData["Database"])
+
+    print('\nTable Name is :' + parseData["Table"][0])
+    erdList.append('\nTable Name is :' + parseData["Table"][0])
+
+    erdList.append('\nColumn details are as follow: \n')
+    print('\nColumn details are as follow: \n')
+    for index in range(len(parseData["Columns"])):
+        for key in parseData["Columns"][index]:
             if(key == "Name"):
-                print('Column Name is :' + parseData["Cloumn"][index]["Name"])
-                erdList.append('Column Name is :' + parseData["Cloumn"][index]["Name"])
+                print('Column Name is :' + parseData["Columns"][index]["Name"])
+                erdList.append('Column Name is :' + parseData["Columns"][index]["Name"])
             elif(key == "DataType"):
-                print('Column Data Type is :' + parseData["Cloumn"][index]["DataType"])
-                erdList.append('Column Data Type is :' + parseData["Cloumn"][index]["DataType"])
+                print('Column Data Type is :' + parseData["Columns"][index]["DataType"])
+                erdList.append('Column Data Type is :' + parseData["Columns"][index]["DataType"])
             elif(key == "isUnique"):
-                if(parseData["Cloumn"][index]["isUnique"] == "True"):
-                    print(parseData["Cloumn"][index]["Name"] + ' is Unique')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' is Unique')
+                if(parseData["Columns"][index]["isUnique"] == "True"):
+                    print(parseData["Columns"][index]["Name"] + ' is Unique')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' is Unique')
                 else:
-                    print(parseData["Cloumn"][index]["Name"] + ' is not Unique')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' is not Unique')
+                    print(parseData["Columns"][index]["Name"] + ' is not Unique')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' is not Unique')
             elif(key == "isNotNull"):
-                if(parseData["Cloumn"][index]["isNotNull"] == "True"):
-                    print(parseData["Cloumn"][index]["Name"] + ' cannot be Not Null')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' cannot be Not Null')
+                if(parseData["Columns"][index]["isNotNull"] == "True"):
+                    print(parseData["Columns"][index]["Name"] + ' cannot be Not Null')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' cannot be Not Null')
                 else:
-                    print(parseData["Cloumn"][index]["Name"] + ' can be Null')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' cannot be Null')
+                    print(parseData["Columns"][index]["Name"] + ' can be Null')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' cannot be Null')
             elif(key == "isAutoIncrement"):
-                if(parseData["Cloumn"][index]["isAutoIncrement"] == "True"):
-                    print(parseData["Cloumn"][index]["Name"] + ' is Auto Increment')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' is Auto Increment')
+                if(parseData["Columns"][index]["isAutoIncrement"] == "True"):
+                    print(parseData["Columns"][index]["Name"] + ' is Auto Increment')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' is Auto Increment')
                 else:
-                    print(parseData["Cloumn"][index]["Name"] + ' is not Auto Increment')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' is not Auto Increment')
+                    print(parseData["Columns"][index]["Name"] + ' is not Auto Increment')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' is not Auto Increment')
             elif(key == "isPrimaryKey"):
-                if(parseData["Cloumn"][index]["isPrimaryKey"] == "True"):
-                    print(parseData["Cloumn"][index]["Name"] + ' is PrimaryKey')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' is PrimaryKey')
+                if(parseData["Columns"][index]["isPrimaryKey"] == "True"):
+                    print(parseData["Columns"][index]["Name"] + ' is PrimaryKey')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' is PrimaryKey')
                 else:
-                    print(parseData["Cloumn"][index]["Name"] + ' is not PrimaryKey')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' is not PrimaryKey')
+                    print(parseData["Columns"][index]["Name"] + ' is not PrimaryKey')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' is not PrimaryKey')
             elif(key == "isForeignKey"):
-                if(parseData["Cloumn"][index]["isForeignKey"] == "True"):
-                    print(parseData["Cloumn"][index]["Name"] + ' is ForeignKey')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' is ForeignKey')
+                if(parseData["Columns"][index]["isForeignKey"] == "True"):
+                    print(parseData["Columns"][index]["Name"] + ' is ForeignKey')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' is ForeignKey')
                 else:
-                    print(parseData["Cloumn"][index]["Name"] + ' is not ForeignKey')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' is not ForeignKey')
+                    print(parseData["Columns"][index]["Name"] + ' is not ForeignKey')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' is not ForeignKey')
             elif(key == "references"):
-                if(parseData["Cloumn"][index]["references"] != ""):
-                    print(parseData["Cloumn"][index]["Name"] + ' references ' + parseData["Cloumn"][index]["references"])
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' references ' + parseData["Cloumn"][index]["references"])
+                if(parseData["Columns"][index]["references"] != ""):
+                    print(parseData["Columns"][index]["Name"] + ' references ' + parseData["Columns"][index]["references"])
+                    erdList.append(parseData["Columns"][index]["Name"] + ' references ' + parseData["Columns"][index]["references"])
             elif(key == "default"):
-                if(parseData["Cloumn"][index]["default"] != ""):
-                    print(parseData["Cloumn"][index]["Name"] + "'s default value is " + parseData["Cloumn"][index]["default"])
-                    erdList.append(parseData["Cloumn"][index]["Name"] + "'s default value is " + parseData["Cloumn"][index]["default"])
+                if(parseData["Columns"][index]["default"] != ""):
+                    print(parseData["Columns"][index]["Name"] + "'s default value is " + parseData["Columns"][index]["default"])
+                    erdList.append(parseData["Columns"][index]["Name"] + "'s default value is " + parseData["Columns"][index]["default"])
                     print("\n")
                     erdList.append("\n")
                 else:
-                    print(parseData["Cloumn"][index]["Name"] + ' does not have any default value')
-                    erdList.append(parseData["Cloumn"][index]["Name"] + ' does not have any default value')
+                    print(parseData["Columns"][index]["Name"] + ' does not have any default value')
+                    erdList.append(parseData["Columns"][index]["Name"] + ' does not have any default value')
                     print("\n")
                     erdList.append("\n")
 

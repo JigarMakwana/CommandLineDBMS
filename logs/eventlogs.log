@@ -8184,3 +8184,47 @@ A new lock is acquired on table sample by user hello
 2020-12-09 12:30:09,576 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
 2020-12-09 12:30:09,584 - Select query executed successfully.
 2020-12-09 12:30:17,163 - User in session: hello
+2020-12-09 12:41:56,642 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:41:56,643 - User in session: test
+2020-12-09 12:42:11,001 - User in session: test
+2020-12-09 12:42:17,299 - User in session: test
+2020-12-09 12:42:26,342 - User entered valid database: database/datadb
+2020-12-09 12:42:59,921 - Query execution failed on database: datadb
+2020-12-09 12:43:23,927 - Query execution failed on database: datadb
+2020-12-09 12:46:45,009 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:46:45,010 - User in session: test
+2020-12-09 12:47:10,547 - User in session: test
+2020-12-09 12:47:20,333 - User in session: test
+2020-12-09 12:47:27,147 - User in session: test
+2020-12-09 12:47:32,547 - User entered valid database: database/datadb
+2020-12-09 12:49:16,802 - Query execution failed on database: datadb
+2020-12-09 12:51:34,522 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:51:34,524 - User in session: test
+2020-12-09 12:51:36,463 - User in session: test
+2020-12-09 12:51:40,697 - User in session: test
+2020-12-09 12:51:43,198 - User entered valid database: database/datadb
+2020-12-09 12:54:18,731 - Invalid query
+2020-12-09 12:54:18,733 - Query execution failed on database: datadb
+2020-12-09 12:54:31,294 - User in session: test
+2020-12-09 12:54:38,224 - User in session: test
+2020-12-09 12:57:55,496 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 12:57:55,496 - User in session: test
+2020-12-09 12:57:57,170 - User in session: test
+2020-12-09 12:58:03,306 - User in session: test
+2020-12-09 12:58:07,922 - User in session: test
+2020-12-09 12:58:10,454 - User in session: test
+2020-12-09 13:02:01,950 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:02:01,950 - User in session: test
+2020-12-09 13:02:04,029 - User in session: test
+2020-12-09 13:02:06,803 - User in session: test
+2020-12-09 13:02:16,465 - User in session: test
+2020-12-09 13:05:38,834 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-09 13:05:38,835 - User in session: test
+2020-12-09 13:05:46,584 - User in session: test
+2020-12-09 13:06:13,424 - Quitting CSCI5408 DBMS....
