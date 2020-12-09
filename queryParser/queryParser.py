@@ -1,6 +1,8 @@
 import re;
 import os;
+import logging
 
+logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
 qType = ""
 qTableName = []
 qInserts = []
@@ -15,6 +17,7 @@ reserveWords = ["(", ")", ">=", "<=", "!=", ",", "=", ">", "<", "select", "inser
 tableNames = ["employee", "department"]
 listQuery = []
 returnValue = ""
+
 
 def parseQuery(query, DB_Name, UserName):
 
@@ -31,7 +34,7 @@ def parseQuery(query, DB_Name, UserName):
             if checkSelectStep():
                 returnValue = "True"
         elif qType == "insert":
-            if checkInsertStep(query,DB_Name):
+            if checkInsertStep(query, DB_Name):
                 returnValue = "True"
         elif qType == "update":
             if checkUpdateStep():
@@ -40,10 +43,11 @@ def parseQuery(query, DB_Name, UserName):
             if checkDeleteStep():
                 returnValue = "True"
         elif qType == "create":
-            if checkCreateStep(query,DB_Name) == "table":
+            if checkCreateStep(query, DB_Name) == "table":
                 returnValue = "CreateTable"
     else:
         print("Invalid query")
+        logging.warning("Invalid query")
         returnValue = "False"
 
     if returnValue == "True":
@@ -58,7 +62,7 @@ def parseQuery(query, DB_Name, UserName):
             "WhereValues": qWhereValues,
             "Error": ""
         }
-       # print(parsedData)
+        # print(parsedData)
         return parsedData
     elif returnValue == "CreateTable":
         parsedData = {
@@ -72,10 +76,12 @@ def parseQuery(query, DB_Name, UserName):
         parsedData = {
             "Error": "Invalid query"
         }
-    print(parsedData)
+
     return parsedData
 
+
 def resetResult():
+    global qType, qTableName, qInserts, qFields, qUpdates, qWhereFields, qWhereValues, colList, listQuery
     qType = ""
     qTableName = []
     qInserts = []
@@ -84,8 +90,10 @@ def resetResult():
     qWhereFields = []
     qWhereValues = []
     colList = []
+    listQuery = []
 
-def checkCreateStep(query,DB_Name):
+
+def checkCreateStep(query, DB_Name):
     fromVal = listQuery.pop(0)
 
     dirname = os.path.dirname
@@ -115,6 +123,7 @@ def checkCreateStep(query,DB_Name):
             toFile = "\n"
             file1.write(toFile)
     return fromVal
+
 
 def createColumnList(query):
     queryWithoutCreate = query.lower().replace("create table " + qTableName[-1] + " ( ", "")
@@ -157,7 +166,7 @@ def createColumnList(query):
                         removeval = columnData.pop(0)
                         referencesKey = columnData.pop(0)
 
-                    if len(columnData)>0:
+                    if len(columnData) > 0:
                         defaultVal = columnData.pop(0)
                         if defaultVal.lower() == "default":
                             default = columnData.pop(0)
@@ -185,6 +194,7 @@ def createColumnList(query):
                   "referencesTable": referencesTable, "referencesKey":referencesKey, "default":default}
         colList.append(column)
    # print(colList)
+
 
 def checkDeleteStep():
     fromVal = listQuery.pop(0)
@@ -234,41 +244,52 @@ def checkDeleteStep():
                                 list3.append(abc)
                         if error == 1:
                             print("Invalid query: identifier expected in where condition")
+                            logging.warning("Invalid query: identifier expected in where condition")
                             return False
                         elif error == 2:
                             print("Invalid query: operator expected in where condition")
+                            logging.warning("Invalid query: operator expected in where condition")
                             return False
                         elif missing == 1:
                             print("Invalid query: expected condition in where clause")
+                            logging.warning("Invalid query: expected condition in where clause")
                             return False
                         else:
-                            print("Successfully parsed query")
+                            # #print("Successfully parsed query")
+                            logging.warning("Successfully parsed query")
                             return True
                     else:
                         print("Invalid query: condition expected after where clause")
+                        logging.warning("Invalid query: condition expected after where clause")
                         return False
                 elif len(whereValue) > 0:
                     print("Invalid query")
-                    return  False
+                    logging.warning("Invalid query")
+                    return False
                 else:
-                    print("Successfully parsed query")
+                    #print("Successfully parsed query")
+                    logging.warning("Successfully parsed query")
                     return True
             else:
                 print("Query Parsed Successfully")
+                logging.warning("Query Parsed Successfully")
                 return True
         else:
             print("Invalid query: Expected keyword FROM and table name")
+            logging.warning("Invalid query: Expected keyword FROM and table name")
             return False
     else:
         print("Invalid query: Expected keyword FROM and table name")
+        logging.warning("Invalid query: Expected keyword FROM and table name")
         return False
+
 
 def checkUpdateStep():
     tableVal = listQuery.pop(0)
     if checkIfTable(tableVal):
         setVal = listQuery.pop(0)
         if setVal == "set":
-            flag =0
+            flag = 0
             error = 0
             lastValue = ""
             list3 = []
@@ -314,12 +335,15 @@ def checkUpdateStep():
 
             if error == 1:
                 print("Invalid query: Expected identifier")
+                logging.warning("Invalid query: Expected identifier")
                 return False
             elif error == 2:
                 print('Invalid query: Expected '"="' operator after identifier')
+                logging.warning('Invalid query: Expected '"="' operator after identifier')
                 return False
             elif missing == 1:
                 print("Invalid query: expected values to update")
+                logging.warning("Invalid query: expected values to update")
                 return False
 
             if lastValue == "where":
@@ -362,30 +386,39 @@ def checkUpdateStep():
                             list3.append(abc)
                     if error == 1:
                         print("Invalid query: identifier expected in where condition")
+                        logging.warning("Invalid query: identifier expected in where condition")
                         return False
                     elif error == 2:
                         print("Invalid query: operator expected in where condition")
+                        logging.warning("Invalid query: operator expected in where condition")
                         return False
                     elif missing == 1:
                         print("Invalid query: expected condition in where clause")
+                        logging.warning("Invalid query: expected condition in where clause")
                         return False
                     else:
-                        print("Successfully parsed query")
+                        #print("Successfully parsed query")
+                        logging.warning("Successfully parsed query")
                         return True
                 else:
                     print("Invalid query: condition expected after where clause")
+                    logging.warning("Invalid query: condition expected after where clause")
                     return False
             else:
-                print("Successfully parsed query")
+                #print("Successfully parsed query")
+                logging.warning("Successfully parsed query")
                 return True
         else:
             print("Invalid query: Expected set keyword")
+            logging.warning("Invalid query: Expected set keyword")
             return False
     else:
         print("Invalid query: Expected table name")
+        logging.warning("Invalid query: Expected table name")
         return False
 
-def checkInsertStep(query,DB_Name):
+
+def checkInsertStep(query, DB_Name):
     dirname = os.path.dirname
     path = os.path.join(dirname(dirname(__file__)))
 
@@ -402,7 +435,7 @@ def checkInsertStep(query,DB_Name):
         if checkIfTable(tableVal):
             openRoundB = listQuery.pop(0)
             if openRoundB == "(":
-                flag =1
+                flag = 1
                 error = 0
                 lastValue = ""
                 list3 = []
@@ -438,6 +471,7 @@ def checkInsertStep(query,DB_Name):
 
                 if error == 1:
                     print("Invalid query: expected identifier")
+                    logging.warning("Invalid query: expected identifier")
                     return False
 
                 if lastValue == ")":
@@ -479,31 +513,41 @@ def checkInsertStep(query,DB_Name):
 
                             if error == 1:
                                 print("Invalid query: expected values to insert")
+                                logging.warning("Invalid query: expected values to insert")
                                 return False
                             if lastValue == ")":
-                                print("Successfully parsed query")
+                                #print("Successfully parsed query")
+                                logging.warning("Successfully parsed query")
                                 return True
                             else:
                                 print("Invalid query")
+                                logging.warning("Invalid query")
                                 return False
                         else:
                             print("Invalid query: Expected round bracket")
+                            logging.warning("Invalid query: Expected round bracket")
                             return False
                     else:
                         print("Invalid query: Expected keyword VALUES")
+                        logging.warning("Invalid query: Expected keyword VALUES")
                         return False
                 else:
                     print("Invalid query: Expected round bracket")
+                    logging.warning("Invalid query: Expected round bracket")
                     return False
             else:
                 print("Invalid query: Expected round bracket")
+                logging.warning("Invalid query: Expected round bracket")
                 return False
         else:
             print("Invalid query: Expected table name")
+            logging.warning("Invalid query: Expected table name")
             return False
     else:
         print("Invalid insert query: Expected keyword INTO")
+        logging.warning("Invalid insert query: Expected keyword INTO")
         return False
+
 
 def checkSelectStep():
     x = listQuery.pop(0)
@@ -517,9 +561,11 @@ def checkSelectStep():
             z = listQuery.pop(0)
             if not checkIfTable(z):
                 print("Invalid table name: " + z)
+                logging.warning("Invalid table name: " + z)
                 return False
         else:
             print("Keyword FROM expected")
+            logging.warning("Keyword FROM expected")
             return False
     elif checkIfAsterik(x):
         qFields.append(x)
@@ -528,12 +574,15 @@ def checkSelectStep():
             z = listQuery.pop(0)
             if not checkIfTable(z):
                 print("Invalid table name: " + z)
+                logging.warning("Invalid table name: " + z)
                 return False
         else:
             print("Keyword FROM expected")
+            logging.warning("Keyword FROM expected")
             return False
     else:
         print("Invalid query")
+        logging.warning("Invalid query")
         return False
 
     if len(listQuery) > 0:
@@ -578,22 +627,29 @@ def checkSelectStep():
                         list3.append(abc)
                 if error == 1:
                     print("Invalid query: identifier expected in where condition")
+                    logging.warning("Invalid query: identifier expected in where condition")
                     return False
                 elif error == 2:
                     print("Invalid query: operator expected in where condition")
+                    logging.warning("Invalid query: operator expected in where condition")
                     return False
                 elif missing == 1:
                     print("Invalid query: expected condition in where clause")
+                    logging.warning("Invalid query: expected condition in where clause")
                     return False
                 else:
-                    print("Successfully parsed query")
+                    #print("Successfully parsed query")
+                    logging.warning("Successfully parsed query")
                     return True
             else:
                 print("Invalid query: condition expected after where clause")
+                logging.warning("Invalid query: condition expected after where clause")
                 return False
     else:
-        print("Successfully parsed query")
+        #print("Successfully parsed query")
+        logging.warning("Successfully parsed query")
         return True
+
 
 def checkIfIdentifier(identifier):
     pattern = r'^[a-zA-Z_]\w*$'
@@ -608,11 +664,13 @@ def checkIfIdentifier(identifier):
     else:
         return False
 
+
 def checkIfcomma(comma):
     if comma == ",":
         return True
     else:
         return False
+
 
 def checkIfEqualOperator(equal):
     if equal == "=":
@@ -620,11 +678,13 @@ def checkIfEqualOperator(equal):
     else:
         return False
 
+
 def checkIfAsterik(asterik):
     if asterik == "*":
         return True
     else:
         return False
+
 
 def checkIfFrom(fromVal):
     if fromVal == "from":
@@ -632,9 +692,11 @@ def checkIfFrom(fromVal):
     else:
         return False
 
+
 def checkIfTable(tableVal):
     qTableName.append(tableVal)
     return True
+
 
 def checkIfCreateTable(fromVal):
     if fromVal == "table":
@@ -642,11 +704,13 @@ def checkIfCreateTable(fromVal):
     else:
         return False
 
+
 def checkIfCreateDatabase(fromVal):
     if fromVal == "database":
         return True
     else:
         return False
+
 
 def checkIfStringOrNumber(value):
     regnumber = re.compile(r'\d+(?:,\d*)?')
