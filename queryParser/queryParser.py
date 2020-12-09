@@ -58,13 +58,14 @@ def parseQuery(query, DB_Name, UserName):
             "WhereValues": qWhereValues,
             "Error": ""
         }
-        print(parsedData)
+       # print(parsedData)
         return parsedData
     elif returnValue == "CreateTable":
         parsedData = {
+            "Type": qType,
             "Database": DB_Name,
             "UserName": UserName,
-            "Table": qTableName.pop(0),
+            "Table": qTableName,
             "Columns":colList
         }
     else:
@@ -100,8 +101,8 @@ def checkCreateStep(query,DB_Name):
         with open(directoryPath, "a") as file1:
             toFile = query + "\n"
             file1.write(toFile)
-
-        createColumnList(query)
+        if len(listQuery) > 0:
+            createColumnList(query)
 
     elif fromVal == "database":
         databaseName = listQuery.pop(0)
@@ -183,7 +184,7 @@ def createColumnList(query):
                   "isAutoIncrement": isAutoIncrement, "isPrimaryKey": isPrimaryKey, "isForeignKey": isForeignKey,
                   "referencesTable": referencesTable, "referencesKey":referencesKey, "default":default}
         colList.append(column)
-    print(colList)
+   # print(colList)
 
 def checkDeleteStep():
     fromVal = listQuery.pop(0)
@@ -658,4 +659,10 @@ def checkIfStringOrNumber(value):
 #parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT 1,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );','904','Rajni')
 #parseQuery('create table 904','904','Rajni')
 #parseQuery('insert into ORDERS ( OrderName , PersonID ) values ( a , b )','904','Rajni');
+#parseQuery('update sample set identifier = 5000 where username = '"grey07"'','904','Rajni');
+
+#parseQuery('CREATE TABLE Orders ( OrderName varchar(255) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,OrderNumber int NOT NULL DEFAULT Sandnes,PersonID int FOREIGN KEY REFERENCES Persons ( PersonID ) );','904','Rajni')
+
+#parseQuery('CREATE TABLE Orders','904','Rajni')
+
 
