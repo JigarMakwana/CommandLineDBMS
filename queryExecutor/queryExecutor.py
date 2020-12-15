@@ -27,10 +27,11 @@ def qExecuteQuery(username):
         while True:
             query = input(">> ")
             try:
-                if query == 'quit':
+                if query == 'q':
                     break
 
                 parser = qp.parseQuery(query, db, username)
+                print(parser)
 
                 # query: select
                 if parser['Type'] == 'select':
@@ -77,11 +78,11 @@ def qExecuteQuery(username):
 
                 # query: insert
                 elif parser['Type'] == 'insert':
-                    with open(db_main + parser['Table'][0].lower(), 'a') as table:
+                    with open(db_main + '/' + parser['Table'][0].lower() + '.csv', 'a', newline='\n') as table:
                         row = ','.join(col for col in parser['InsertUpdateData'])
                         table.write(row + "\n")
                         logging.warning('Insert query executed successfully.')
-                        print("Successfully entered")
+                        print("Successfully inserted the data")
 
                 # query: update
                 elif parser['Type'] == 'update':
@@ -134,7 +135,10 @@ def qExecuteQuery(username):
                     for index in range(len(parser["Columns"])):
                         for key in parser["Columns"][index]:
                             if(key == "Name"):
-                                header = header + ',' + (parser["Columns"][index]["Name"])
+                                if(index == 0):
+                                    header = (parser["Columns"][index]["Name"])
+                                else:
+                                    header = header + ',' + (parser["Columns"][index]["Name"])
                     with open(db_main + '/' + parser['Table'][0].lower() + '.csv', 'w') as table:
                         table.write(header)
                         # print(table)

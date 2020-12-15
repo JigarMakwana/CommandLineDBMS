@@ -8276,3 +8276,246 @@ Successfully Signed into CSCI5408 DBMS
 2020-12-09 13:28:32,905 - User in session: test
 2020-12-09 13:28:35,746 - User entered valid database: database/datadb
 2020-12-09 15:04:30,553 - Quitting CSCI5408 DBMS....
+2020-12-14 13:07:03,915 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-14 13:07:03,915 - User in session: test
+2020-12-14 13:07:05,203 - User in session: test
+2020-12-14 13:07:13,838 - User in session: test
+2020-12-14 13:07:18,699 - User entered valid database: database/datadb
+2020-12-14 13:08:08,269 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-14 13:08:08,270 - User in session: test
+2020-12-14 13:08:09,399 - User in session: test
+2020-12-14 13:08:16,589 - User in session: test
+2020-12-14 13:08:25,427 - User entered valid database: database/datadb
+2020-12-14 13:15:43,234 - Invalid query
+2020-12-14 13:15:43,235 - Query execution failed on database: datadb
+2020-12-14 13:15:45,959 - User in session: test
+2020-12-14 13:16:49,598 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-14 13:16:49,598 - User in session: test
+2020-12-14 13:16:52,040 - User in session: test
+2020-12-14 13:16:58,300 - User in session: test
+2020-12-14 13:17:08,922 - User in session: test
+2020-12-14 13:17:18,231 - User entered valid database: database/jigardb
+2020-12-14 13:22:36,259 - Query execution failed on database: jigardb
+2020-12-14 13:59:26,597 - Query execution failed on database: jigardb
+2020-12-14 14:01:07,970 - Query execution failed on database: jigardb
+2020-12-14 14:02:39,932 - Query execution failed on database: jigardb
+2020-12-14 14:06:54,597 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-14 14:06:54,597 - User in session: test
+2020-12-14 14:06:55,994 - User in session: test
+2020-12-14 14:06:59,767 - User in session: test
+2020-12-14 14:07:03,747 - User entered valid database: database/datadb
+2020-12-14 14:07:51,026 - Query execution failed on database: datadb
+2020-12-15 08:41:53,255 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 08:41:53,256 - User in session: test
+2020-12-15 08:42:13,815 - User in session: test
+2020-12-15 08:42:28,044 - User in session: test
+2020-12-15 08:42:32,609 - User entered valid database: database/datadb
+2020-12-15 08:45:01,567 - Query execution failed on database: datadb
+2020-12-15 08:47:15,142 - Query execution failed on database: datadb
+2020-12-15 09:33:08,763 - User in session: test
+2020-12-15 09:33:10,572 - User in session: test
+2020-12-15 11:39:11,420 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 11:39:11,421 - User in session: test
+2020-12-15 11:39:12,903 - User in session: test
+2020-12-15 11:39:17,964 - User in session: test
+2020-12-15 11:39:19,594 - User entered valid database: database/datadb
+2020-12-15 12:17:23,339 - Query execution failed on database: datadb
+2020-12-15 12:24:38,060 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 12:24:38,062 - User in session: test
+2020-12-15 12:24:40,468 - User in session: test
+2020-12-15 12:24:43,542 - User in session: test
+2020-12-15 12:24:52,602 - User entered valid database: database/datadb
+2020-12-15 12:35:27,655 - Query execution failed on database: datadb
+2020-12-15 12:37:27,239 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 12:37:27,239 - User in session: test
+2020-12-15 12:37:28,538 - User in session: test
+2020-12-15 12:37:31,108 - User in session: test
+2020-12-15 12:37:35,102 - User entered valid database: database/datadb
+2020-12-15 12:37:45,014 - Query execution failed on database: datadb
+2020-12-15 12:38:09,744 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 12:38:09,745 - User in session: test
+2020-12-15 12:38:11,410 - User in session: test
+2020-12-15 12:38:15,283 - User in session: test
+2020-12-15 12:38:17,584 - User entered valid database: database/datadb
+2020-12-15 12:40:02,755 - Query execution failed on database: datadb
+2020-12-15 12:41:04,068 - Query execution failed on database: datadb
+2020-12-15 12:43:38,942 - Query execution failed on database: datadb
+2020-12-15 13:04:01,847 - Query execution failed on database: datadb
+2020-12-15 13:04:44,915 - Query execution failed on database: datadb
+2020-12-15 13:04:47,299 - Invalid query
+2020-12-15 13:04:47,301 - Query execution failed on database: datadb
+2020-12-15 13:08:36,189 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 13:08:36,190 - User in session: test
+2020-12-15 13:08:38,670 - User in session: test
+2020-12-15 13:09:03,081 - User in session: test
+2020-12-15 13:09:05,710 - User entered valid database: database/datadb
+2020-12-15 13:11:12,375 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 13:11:12,376 - User in session: test
+2020-12-15 13:11:15,213 - User in session: test
+2020-12-15 13:11:19,499 - User in session: test
+2020-12-15 13:11:24,660 - User entered valid database: database/datadb
+2020-12-15 13:14:16,160 - Invalid query: Expected round bracket
+2020-12-15 13:14:16,162 - Query execution failed on database: datadb
+2020-12-15 13:14:48,007 - Successfully parsed query
+2020-12-15 13:14:48,014 - Insert query executed successfully.
+2020-12-15 13:17:22,159 - Successfully parsed query
+2020-12-15 13:17:22,160 - Insert query executed successfully.
+2020-12-15 13:20:59,692 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 13:20:59,693 - User in session: test
+2020-12-15 13:21:01,604 - User in session: test
+2020-12-15 13:21:05,437 - User in session: test
+2020-12-15 13:21:10,038 - User entered valid database: database/datadb
+2020-12-15 13:23:39,611 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 13:23:39,611 - User in session: test
+2020-12-15 13:23:41,982 - User in session: test
+2020-12-15 13:23:44,576 - User in session: test
+2020-12-15 13:23:47,133 - User entered valid database: database/datadb
+2020-12-15 13:24:28,203 - Successfully parsed query
+2020-12-15 13:24:28,205 - Insert query executed successfully.
+2020-12-15 13:26:13,695 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 13:26:13,695 - User in session: test
+2020-12-15 13:26:14,933 - User in session: test
+2020-12-15 13:26:18,115 - User in session: test
+2020-12-15 13:26:20,473 - User entered valid database: database/datadb
+2020-12-15 13:26:27,056 - Successfully parsed query
+2020-12-15 13:26:27,059 - Insert query executed successfully.
+2020-12-15 13:26:42,910 - Successfully parsed query
+2020-12-15 13:26:42,912 - Insert query executed successfully.
+2020-12-15 13:30:23,764 - Successfully parsed query
+2020-12-15 13:30:23,766 - Insert query executed successfully.
+2020-12-15 13:30:40,122 - Successfully parsed query
+2020-12-15 13:30:40,123 - Insert query executed successfully.
+2020-12-15 13:32:45,937 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 13:32:45,938 - User in session: test
+2020-12-15 13:32:47,406 - User in session: test
+2020-12-15 13:32:50,168 - User in session: test
+2020-12-15 13:32:51,864 - User entered valid database: database/datadb
+2020-12-15 13:33:06,403 - Invalid query: expected values to insert
+2020-12-15 13:33:06,404 - Query execution failed on database: datadb
+2020-12-15 13:33:53,185 - Successfully parsed query
+2020-12-15 13:33:53,187 - Insert query executed successfully.
+2020-12-15 13:34:29,678 - Invalid query: expected values to insert
+2020-12-15 13:34:29,679 - Query execution failed on database: datadb
+2020-12-15 13:34:50,195 - Successfully parsed query
+2020-12-15 13:34:50,196 - Insert query executed successfully.
+2020-12-15 13:35:09,975 - Invalid query: expected values to insert
+2020-12-15 13:35:09,976 - Query execution failed on database: datadb
+2020-12-15 13:35:19,417 - Successfully parsed query
+2020-12-15 13:35:19,419 - Insert query executed successfully.
+2020-12-15 13:45:24,825 - 
+User not found
+2020-12-15 13:45:29,275 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 13:45:29,275 - User in session: test
+2020-12-15 13:45:45,467 - User in session: test
+2020-12-15 13:56:32,083 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 13:56:32,084 - User in session: test
+2020-12-15 16:09:05,115 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 16:09:05,115 - User in session: test
+2020-12-15 16:09:10,396 - User in session: test
+2020-12-15 16:17:00,819 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 16:17:00,819 - User in session: test
+2020-12-15 16:17:08,786 - User in session: test
+2020-12-15 16:18:19,385 - User in session: test
+2020-12-15 16:18:43,033 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 16:18:43,033 - User in session: test
+2020-12-15 16:18:48,290 - User in session: test
+2020-12-15 16:21:35,977 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 16:21:35,979 - User in session: test
+2020-12-15 16:25:47,474 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 16:25:47,475 - User in session: test
+2020-12-15 16:25:48,812 - User in session: test
+2020-12-15 16:25:55,505 - User in session: test
+2020-12-15 16:25:58,323 - User in session: test
+2020-12-15 16:28:04,954 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 16:28:04,954 - User in session: test
+2020-12-15 16:28:51,090 - User in session: test
+2020-12-15 16:30:19,030 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 16:30:19,031 - User in session: test
+2020-12-15 16:30:23,785 - User in session: test
+2020-12-15 18:10:46,183 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:10:46,183 - User in session: test
+2020-12-15 18:10:48,783 - User in session: test
+2020-12-15 18:10:52,229 - User in session: test
+2020-12-15 18:13:35,253 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:13:35,253 - User in session: test
+2020-12-15 18:16:09,796 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:16:09,796 - User in session: test
+2020-12-15 18:18:31,084 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:18:31,084 - User in session: test
+2020-12-15 18:22:04,523 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:22:04,523 - User in session: test
+2020-12-15 18:22:49,155 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:22:49,156 - User in session: test
+2020-12-15 18:25:09,220 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:25:09,221 - User in session: test
+2020-12-15 18:25:37,457 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:25:37,457 - User in session: test
+2020-12-15 18:25:41,194 - User in session: test
+2020-12-15 18:25:54,053 - User in session: test
+2020-12-15 18:26:54,726 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:26:54,727 - User in session: test
+2020-12-15 18:30:49,804 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:30:49,805 - User in session: test
+2020-12-15 18:30:55,355 - User in session: test
+2020-12-15 18:32:01,733 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:32:01,734 - User in session: test
+2020-12-15 18:32:09,557 - User in session: test
+2020-12-15 18:33:20,267 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:33:20,269 - User in session: test
+2020-12-15 18:35:37,509 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:35:37,511 - User in session: test
+2020-12-15 18:35:44,483 - User in session: test
+2020-12-15 18:38:15,715 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:38:15,716 - User in session: test
+2020-12-15 18:38:20,486 - User in session: test
+2020-12-15 18:57:51,258 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:57:51,259 - User in session: test
+2020-12-15 18:58:37,179 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 18:58:37,180 - User in session: test
+2020-12-15 18:58:44,154 - User in session: test
+2020-12-15 19:00:11,793 - User in session: test
+2020-12-15 19:22:09,012 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 19:22:09,012 - User in session: test
+2020-12-15 19:22:23,978 - User in session: test
+2020-12-15 19:22:49,952 - User in session: test

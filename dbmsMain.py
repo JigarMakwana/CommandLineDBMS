@@ -3,7 +3,7 @@ from userManagement import functions
 from userManagement import user_class
 from execution import Execution
 import logging
-from dbERD.dbERD import generateERD
+from dbERD.generateERD import generateERD
 from sqlDump.sqlDump import createDump
 logging.basicConfig(format='%(asctime)s - %(message)s', filename='logs/eventlogs.log')
 

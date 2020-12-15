@@ -1,36 +1,37 @@
 
 Database Name is :datadb
+Database has total 3 entities
 
-Table Name is :orders
-Column details are as follow: 
+Table Name is :order
+order's details is as follow:
+Column Name is :orderid
+Column Data Type is :int
+orderid is PrimaryKey
+Column Name is :customerid
+Column Data Type is :int
+customerid is ForeignKey
+Key: customerid references to table: customer
+Reference key is: customerid
+Cradinality from customer to order is 1:N
 
-Column Name is :ordername
+Table Name is :customer
+customer's details is as follow:
+Column Name is :customerid
+Column Data Type is :int
+customerid is PrimaryKey
+Column Name is :customername
 Column Data Type is :varchar(255)
-ordername cannot be Null
-ordername is not Unique
-ordername is not Auto Increment
-ordername is not PrimaryKey
-ordername is not ForeignKey
-ordername does not have any default value
 
-
-Column Name is :ordernumber
+Table Name is :orderdetail
+orderdetail's details is as follow:
+Column Name is :orderdetailid
 Column Data Type is :int
-ordernumber cannot be Null
-ordernumber is not Unique
-ordernumber is not Auto Increment
-ordernumber is not PrimaryKey
-ordernumber is not ForeignKey
-ordernumber's default value is sandnes
-
-
-Column Name is :personid
+orderdetailid is PrimaryKey
+Column Name is :productname
+Column Data Type is :varchar(255)
+Column Name is :orderid
 Column Data Type is :int
-personid cannot be Null
-personid is not Unique
-personid is not Auto Increment
-personid is not PrimaryKey
-personid is not ForeignKey
-personid does not have any default value
-
-
+orderid is ForeignKey
+Key: orderid references to table: order
+Reference key is: orderid
+Cradinality from order to orderdetail is 1:N

@@ -134,7 +134,6 @@ def createColumnList(query):
         columnData = val.strip().split(" ")
         columnName = columnData.pop(0)
         datatype = columnData.pop(0)
-        isNot = columnData.pop(0)
         isNotNullVal = False
         isUnique = False
         isAutoIncrement = False
@@ -144,52 +143,55 @@ def createColumnList(query):
         referencesKey = ""
         default = ""
 
-        if isNot.lower() == "not":
-            isnull = columnData.pop(0)
-            isNotNullVal = True
+        if(len(columnData) > 0):
+            isNot = columnData.pop(0)
 
-            isUniqueVal = columnData.pop(0)
-            if isUniqueVal.lower() == "unique":
+            if isNot.lower() == "not":
+                isnull = columnData.pop(0)
+                isNotNullVal = True
+
+                isUniqueVal = columnData.pop(0)
+                if isUniqueVal.lower() == "unique":
+                    isUnique = True
+
+                    isAutoIncrementVal = columnData.pop(0)
+                    if isAutoIncrementVal.lower() == "auto_increment":
+                        isAutoIncrement = True
+
+                        isPrimaryKeyVal = columnData.pop(0)
+                        if isPrimaryKeyVal.lower() == "primary":
+                            isPrimaryKeyVal = columnData.pop(0)
+                            isPrimaryKey = True
+                        elif isPrimaryKeyVal.lower() == "foreign":
+                            isPrimaryKeyVal = columnData.pop(0)
+                            isForeignKey = True
+                            refrencesVal = columnData.pop(0)
+                            referencesTable = columnData.pop(0)
+                            removeval = columnData.pop(0)
+                            referencesKey = columnData.pop(0)
+
+                        if len(columnData) > 0:
+                            defaultVal = columnData.pop(0)
+                            if defaultVal.lower() == "default":
+                                default = columnData.pop(0)
+
+                if isUniqueVal.lower() == "default":
+                    default = columnData.pop(0)
+
+            elif isNot.lower() == "unique":
                 isUnique = True
 
-                isAutoIncrementVal = columnData.pop(0)
-                if isAutoIncrementVal.lower() == "auto_increment":
-                    isAutoIncrement = True
+                defaultVal = columnData.pop(0)
+                if defaultVal.lower() == "default":
+                    default = columnData.pop(0)
 
-                    isPrimaryKeyVal = columnData.pop(0)
-                    if isPrimaryKeyVal.lower() == "primary":
-                        isPrimaryKeyVal = columnData.pop(0)
-                        isPrimaryKey = True
-                    elif isPrimaryKeyVal.lower() == "foreign":
-                        isPrimaryKeyVal = columnData.pop(0)
-                        isForeignKey = True
-                        refrencesVal = columnData.pop(0)
-                        referencesTable = columnData.pop(0)
-                        removeval = columnData.pop(0)
-                        referencesKey = columnData.pop(0)
-
-                    if len(columnData) > 0:
-                        defaultVal = columnData.pop(0)
-                        if defaultVal.lower() == "default":
-                            default = columnData.pop(0)
-
-            if isUniqueVal.lower() == "default":
-                default = columnData.pop(0)
-
-        elif isNot.lower() == "unique":
-            isUnique = True
-
-            defaultVal = columnData.pop(0)
-            if defaultVal.lower() == "default":
-                default = columnData.pop(0)
-
-        elif isNot.lower() == "foreign":
-            isForeignKey = True
-            isForeignKeyVal = columnData.pop(0)
-            referencesVal = columnData.pop(0)
-            referencesTable = columnData.pop(0)
-            removeval = columnData.pop(0)
-            referencesKey = columnData.pop(0)
+            elif isNot.lower() == "foreign":
+                isForeignKey = True
+                isForeignKeyVal = columnData.pop(0)
+                referencesVal = columnData.pop(0)
+                referencesTable = columnData.pop(0)
+                removeval = columnData.pop(0)
+                referencesKey = columnData.pop(0)
 
         column = {"Name": columnName, "DataType": datatype, "isNotNull": isNotNullVal, "isUnique": isUnique,
                   "isAutoIncrement": isAutoIncrement, "isPrimaryKey": isPrimaryKey, "isForeignKey": isForeignKey,
