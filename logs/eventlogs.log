@@ -8519,3 +8519,141 @@ Successfully Signed into CSCI5408 DBMS
 2020-12-15 19:22:09,012 - User in session: test
 2020-12-15 19:22:23,978 - User in session: test
 2020-12-15 19:22:49,952 - User in session: test
+2020-12-15 19:36:02,084 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 19:36:02,085 - User in session: test
+2020-12-15 19:36:05,098 - User in session: test
+2020-12-15 19:36:08,091 - User in session: test
+2020-12-15 19:36:10,944 - User entered valid database: database/datadb
+2020-12-15 19:40:51,543 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 19:40:51,544 - User in session: test
+2020-12-15 19:41:16,256 - User in session: test
+2020-12-15 19:42:06,727 - User in session: test
+2020-12-15 19:42:13,493 - User entered valid database: database/datadb
+2020-12-15 19:43:16,540 - Successfully parsed query
+2020-12-15 19:43:16,541 - Insert query executed successfully.
+2020-12-15 19:45:28,677 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 19:45:28,678 - User in session: test
+2020-12-15 19:45:42,851 - User in session: test
+2020-12-15 19:45:46,200 - User in session: test
+2020-12-15 19:45:56,545 - User entered valid database: database/datadb
+2020-12-15 19:46:02,216 - Successfully parsed query
+2020-12-15 19:46:02,217 - Insert query executed successfully.
+2020-12-15 19:46:22,297 - Successfully parsed query
+2020-12-15 19:46:22,298 - Insert query executed successfully.
+2020-12-15 19:46:25,773 - Successfully parsed query
+2020-12-15 19:46:25,774 - Insert query executed successfully.
+2020-12-15 19:48:15,752 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 19:48:15,752 - User in session: test
+2020-12-15 19:48:48,593 - User in session: test
+2020-12-15 19:48:59,558 - User in session: test
+2020-12-15 19:49:02,513 - User entered valid database: database/datadb
+2020-12-15 19:49:43,612 - Successfully parsed query
+2020-12-15 19:49:43,613 - Insert query executed successfully.
+2020-12-15 19:50:16,731 - Successfully parsed query
+2020-12-15 19:50:16,732 - Insert query executed successfully.
+2020-12-15 19:52:54,925 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 19:52:54,925 - User in session: test
+2020-12-15 19:52:56,281 - User in session: test
+2020-12-15 19:52:58,831 - User in session: test
+2020-12-15 19:53:00,221 - User entered valid database: database/datadb
+2020-12-15 19:53:21,501 - Successfully parsed query
+2020-12-15 19:53:21,502 - Insert query executed successfully.
+2020-12-15 19:54:31,670 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 19:54:31,671 - User in session: test
+2020-12-15 19:54:58,218 - User in session: test
+2020-12-15 19:55:05,198 - User in session: test
+2020-12-15 19:55:08,074 - User entered valid database: database/datadb
+2020-12-15 19:55:45,671 - Successfully parsed query
+2020-12-15 19:55:45,672 - Insert query executed successfully.
+2020-12-15 19:55:56,673 - Successfully parsed query
+2020-12-15 19:55:56,674 - Insert query executed successfully.
+2020-12-15 19:56:31,056 - Successfully parsed query
+2020-12-15 19:56:31,057 - Insert query executed successfully.
+2020-12-15 19:56:38,780 - Successfully parsed query
+2020-12-15 19:56:38,782 - Insert query executed successfully.
+2020-12-15 19:58:40,606 - Successfully parsed query
+2020-12-15 19:58:40,607 - Insert query executed successfully.
+2020-12-15 19:58:46,928 - Invalid query: expected values to insert
+2020-12-15 19:58:46,929 - Query execution failed on database: datadb
+2020-12-15 19:58:56,802 - Invalid query
+2020-12-15 19:58:56,803 - Query execution failed on database: datadb
+2020-12-15 19:59:19,708 - Invalid query
+2020-12-15 19:59:19,709 - Query execution failed on database: datadb
+2020-12-15 20:00:22,192 - Successfully parsed query
+2020-12-15 20:00:22,193 - Insert query executed successfully.
+2020-12-15 20:00:30,901 - Successfully parsed query
+2020-12-15 20:00:30,902 - Insert query executed successfully.
+2020-12-15 20:00:36,376 - Invalid query: expected values to insert
+2020-12-15 20:00:36,377 - Query execution failed on database: datadb
+2020-12-15 20:00:48,464 - Successfully parsed query
+2020-12-15 20:00:48,465 - Insert query executed successfully.
+2020-12-15 20:00:54,108 - Invalid query: expected values to insert
+2020-12-15 20:00:54,109 - Query execution failed on database: datadb
+2020-12-15 20:03:57,094 - Successfully parsed query
+2020-12-15 20:03:57,096 - Insert query executed successfully.
+2020-12-15 20:04:30,312 - User in session: test
+2020-12-15 20:04:40,609 - User in session: test
+2020-12-15 20:05:00,216 - User in session: test
+2020-12-15 20:08:20,355 - User in session: test
+2020-12-15 20:08:27,206 - User in session: test
+2020-12-15 20:08:31,339 - User entered valid database: database/datadb
+2020-12-15 20:08:41,469 - Successfully parsed query
+2020-12-15 20:08:41,470 - Insert query executed successfully.
+2020-12-15 20:09:35,974 - User in session: test
+2020-12-15 20:09:38,573 - User in session: test
+2020-12-15 20:09:46,896 - User in session: test
+2020-12-15 20:15:03,728 - 
+User not found
+2020-12-15 20:15:21,609 - 
+New user is saved in DBMS Database!
+2020-12-15 20:15:21,610 - 
+Sucessfully added a New user.
+
+2020-12-15 20:15:31,242 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 20:15:31,243 - User in session: test
+2020-12-15 20:15:53,508 - 
+Successfully Signed into CSCI5408 DBMS
+2020-12-15 20:15:53,508 - User in session: hello
+2020-12-15 20:16:19,268 - User in session: test
+2020-12-15 20:16:27,069 - User in session: test
+2020-12-15 20:16:29,966 - User in session: hello
+2020-12-15 20:16:33,663 - User in session: hello
+2020-12-15 20:17:33,957 - Successfully parsed query
+2020-12-15 20:17:33,957 - Query is parsed successfully.
+2020-12-15 20:17:33,957 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-15 20:17:33,965 - Select query executed successfully.
+2020-12-15 20:17:53,602 - Successfully parsed query
+2020-12-15 20:17:53,603 - Query is parsed successfully.
+2020-12-15 20:17:53,603 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-15 20:17:53,609 - Select query executed successfully.
+2020-12-15 20:18:58,714 - Successfully parsed query
+2020-12-15 20:18:58,714 - Query is parsed successfully.
+2020-12-15 20:18:58,714 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['5000'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-15 20:18:58,716 - 
+A new lock is acquired on table sample by user test
+2020-12-15 20:18:58,721 - Update query executed successfully.
+2020-12-15 20:19:40,783 - Successfully parsed query
+2020-12-15 20:19:40,783 - Query is parsed successfully.
+2020-12-15 20:19:40,784 - {'Type': 'select', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': [], 'InsertUpdateData': ['*'], 'WhereFields': [], 'WhereValues': [], 'Error': ''}
+2020-12-15 20:19:40,784 - Wainting for other transaction to release the lock...
+2020-12-15 20:19:44,787 - Exclusive Lock is not released by other transaction
+2020-12-15 20:20:34,039 - Lock is released
+2020-12-15 20:21:42,180 - Successfully parsed query
+2020-12-15 20:21:42,181 - Query is parsed successfully.
+2020-12-15 20:21:42,181 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['700'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-15 20:21:42,186 - 
+A new lock is acquired on table sample by user hello
+2020-12-15 20:21:42,188 - Update query executed successfully.
+2020-12-15 20:22:23,686 - Successfully parsed query
+2020-12-15 20:22:23,686 - Query is parsed successfully.
+2020-12-15 20:22:23,687 - {'Type': 'update', 'Database': [], 'Table': ['sample'], 'InsertFields': [], 'UpdateFields': ['identifier'], 'InsertUpdateData': ['100'], 'WhereFields': ['username'], 'WhereValues': ['grey07'], 'Error': ''}
+2020-12-15 20:22:23,688 - Wainting for other transaction to release the lock...
+2020-12-15 20:22:27,692 - Exclusive Lock is not released by other transaction
+2020-12-15 20:22:52,586 - Lock is released

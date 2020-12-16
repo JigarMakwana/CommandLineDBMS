@@ -31,7 +31,7 @@ def qExecuteQuery(username):
                     break
 
                 parser = qp.parseQuery(query, db, username)
-                print(parser)
+                # print(parser)
 
                 # query: select
                 if parser['Type'] == 'select':
@@ -78,7 +78,7 @@ def qExecuteQuery(username):
 
                 # query: insert
                 elif parser['Type'] == 'insert':
-                    with open(db_main + '/' + parser['Table'][0].lower() + '.csv', 'a', newline='\n') as table:
+                    with open(db_main + '/' + parser['Table'][0].lower() + '.csv', 'a', newline='') as table:
                         row = ','.join(col for col in parser['InsertUpdateData'])
                         table.write(row + "\n")
                         logging.warning('Insert query executed successfully.')
@@ -140,7 +140,7 @@ def qExecuteQuery(username):
                                 else:
                                     header = header + ',' + (parser["Columns"][index]["Name"])
                     with open(db_main + '/' + parser['Table'][0].lower() + '.csv', 'w') as table:
-                        table.write(header)
+                        table.write(header + "\n")
                         # print(table)
 
             except Exception as e:
