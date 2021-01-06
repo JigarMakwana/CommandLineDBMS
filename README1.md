@@ -3,7 +3,6 @@
 The is a simple Commandline Database Management System.
 
 ## Authors
-
 * Jigar Makwana, B00842568
 * Rajni Puni, B00869539
 * Karan Bhaveshbhai Kharecha, B00849014
